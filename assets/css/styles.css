@@ -1,46 +1,85 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Roboto, sans-serif;
+  font-family: Roboto, sans-serif;
 }
+
+/* Header */
 header {
-    background-color: black;
-    color: whitesmoke;
-    overflow: auto;
+  background-color: black;
+  color: white;
+  overflow: hidden;
 }
 header h1 {
-    display: inline;
-    margin: 0;
-    padding: 7px 0 7px 7px;
-    font-size: 36px;
+  display: inline;
+  margin: 0;
+  padding: 7px 0 7px 7px;
+  font-size: 36px;
 }
 header nav {
-    float: right;
-    margin: 7px 0;
+  float: right;
+  margin: 10px 0;
 }
 header nav ul {
-    list-style-type: none;
-    /* float: right; */
+  list-style-type: none;
+  /* float: right; */
 }
 header nav ul li {
-    color: whitesmoke;
-    display: inline;
-    margin: 0 7px;
+  color: whitesmoke;
+  display: inline;
+  margin: 0 7px;
 }
 header nav ul li a {
-    text-decoration: none;
-    margin: 0 7px;
-    color: whitesmoke;
+  text-decoration: none;
+  margin: 0 7px;
+  color: whitesmoke;
 }
 
 header nav ul li a:hover {
-    color: lightgray;
+  color: lightgray;
 }
 
-h2 {
-    
+/* Sections */
+section {
+  height: 200px;
+  margin-top: 20px;
+}
+
+section h2 {
+  float: left;
+  padding-right: 20px;
+}
+
+section article {
+  float: left;
+  border-left: 5px solid black;
+  padding-left: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: black;
+  color: white;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+}
+
+footer div {
+  padding: 10px 0;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-style: italic;
+}
+
+footer a:hover {
+  color: lightgray;
 }
