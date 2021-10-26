@@ -89,8 +89,12 @@ section {
   display: flex;
   flex-direction: column-reverse;
   background-size: cover;
-  background-position: top left;
+  background-position: top;
   border-radius: 10px 0 10px 0;
+}
+
+.disabled {
+  pointer-events: none;
 }
 
 .project-tile:hover {
