@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #000;
+  --secondary-color: #444;
+  --tertiary-color: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -154,4 +160,88 @@ footer {
 
 footer div {
   padding: 10px 0;
+}
+
+/* MEDAI QUERIES */
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .about {
+    flex: none;
+    text-align: justify;
+  }
+
+  .about img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .content,
+  section {
+    display: block;
+  }
+
+  .heading,
+  .content {
+    flex: none;
+    display: block;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .heading {
+    font-size: 36px;
+    text-align: center;
+    width: 60%;
+    border-bottom: 3px solid var(--primary-color);
+    margin: 20px auto;
+  }
+
+  .project-tile {
+    margin: 2%;
+  }
+
+  .contact .content {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .contact .content h3 {
+    font-size: 28px;
+  }
+}
+/* Mobile */
+@media screen and (max-width: 480px) {
+  header h1 {
+    display: block;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  header nav {
+    margin: 0;
+    padding: 10px;
+    float: none;
+    text-align: center;
+  }
+
+  header nav ul li {
+    padding: 0;
+  }
+
+  .btn {
+    display: block;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .contact .content h3 {
+    font-size: 24px;
+  }
 }
