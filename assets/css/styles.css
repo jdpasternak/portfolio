@@ -82,11 +82,11 @@ section {
   height: 300px;
   display: flex;
   flex-direction: column-reverse;
-  background-color: gray;
+  background-color: rgb(128, 128, 128, 1);
 }
 
 .project-tile:hover {
-  opacity: 0.75;
+  background-color: rgb(128, 128, 128, 0.75);
 }
 
 .project-tile:first-child {
@@ -98,7 +98,7 @@ section {
   background-color: black;
   color: white;
   display: inline-block;
-  padding: 3px;
+  padding: 3px 7px;
   align-self: flex-start;
   border-radius: 8px 8px 8px 0;
   /* position: relative;
