@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #000;
+  --secondary-color: #444;
+  --tertiary-color: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -44,7 +50,89 @@ header nav ul li a:hover {
 }
 
 /* Sections */
+article p,
+article ul {
+  margin-bottom: 1em;
+}
+
+article li {
+  margin-left: 2em;
+}
+
 section {
+  display: flex;
+  align-items: flex-start;
+  margin: 10px;
+  justify-content: flex-start;
+}
+
+.heading {
+  flex: 1;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.content {
+  flex: 4;
+  border-left: 3px solid black;
+  padding-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.project-tile {
+  flex: 0 1 49%;
+  border: 1px solid black;
+  margin: 3px;
+  height: 300px;
+  display: flex;
+  flex-direction: column-reverse;
+  background-size: cover;
+  background-position: top;
+  border-radius: 10px 0 10px 0;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.project-tile:hover {
+  opacity: 0.75;
+}
+
+.project-tile:first-child {
+  flex: 100%;
+  /* height: 100px; */
+}
+
+.title-tile {
+  background-color: black;
+  color: white;
+  display: inline-block;
+  padding: 3px 7px;
+  align-self: flex-start;
+  border-radius: 8px 8px 8px 0;
+  /* position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+}
+
+.btn {
+  padding: 5px 10px;
+  background-color: gray;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: lightgray;
+  color: black;
+}
+
+/* section {
   margin: 20px 0;
   overflow: auto;
 }
@@ -62,13 +150,13 @@ section article {
   width: 80%;
   border-left: 5px solid black;
   padding: 10px 0 10px 20px;
-}
+} */
 
 /* Footer */
 footer {
   background-color: black;
   color: white;
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   text-align: center;
   bottom: 0;
@@ -78,14 +166,88 @@ footer div {
   padding: 10px 0;
 }
 
-footer a {
-  color: white;
-  text-decoration: none;
-  font-style: italic;
-}
+/* MEDAI QUERIES */
 
-footer a:hover {
-  color: lightgray;
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .about {
+    flex: none;
+    text-align: justify;
+  }
+
+  .about img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .content,
+  section {
+    display: block;
+  }
+
+  .heading,
+  .content {
+    flex: none;
+    display: block;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .heading {
+    font-size: 36px;
+    text-align: center;
+    width: 60%;
+    border-bottom: 3px solid var(--primary-color);
+    margin: 20px auto;
+  }
+
+  .project-tile {
+    margin: 2%;
+  }
+
+  .contact .content {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .contact .content h3 {
+    font-size: 28px;
+  }
+}
+/* Mobile */
+@media screen and (max-width: 480px) {
+  header h1 {
+    display: block;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  header nav {
+    margin: 0;
+    padding: 10px;
+    float: none;
+    text-align: center;
+  }
+
+  header nav ul li {
+    padding: 0;
+  }
+
+  .btn {
+    display: block;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .contact .content h3 {
+    font-size: 24px;
+  }
 }
 
 .under-construction {
