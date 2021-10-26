@@ -82,11 +82,13 @@ section {
   height: 300px;
   display: flex;
   flex-direction: column-reverse;
-  background-color: rgb(128, 128, 128, 1);
+  background-size: cover;
+  background-position: top left;
+  /* background-color: rgb(128, 128, 128, 1); */
 }
 
 .project-tile:hover {
-  background-color: rgb(128, 128, 128, 0.75);
+  opacity: 0.75;
 }
 
 .project-tile:first-child {
