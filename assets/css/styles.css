@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+
 :root {
   --primary-color: #000;
   --secondary-color: #444;
@@ -24,11 +26,16 @@ body {
 }
 
 .jumbotron {
+  font-family: Monoton, cursive;
   background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0.1)
   );
+}
+
+.jumbotron h2 {
+  font-size: 5rem;
 }
 
 /* Header */
