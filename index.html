@@ -74,6 +74,16 @@
                 Contact
               </button>
             </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link link-light"
+                id="resume-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#resume"
+              >
+                Résumé
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
@@ -178,11 +188,7 @@
         </article>
       </section>
       <!-- Projects -->
-      <section
-        class="tab-pane fade show active mb-2"
-        id="projects"
-        role="tabpanel"
-      >
+      <section class="tab-pane fade mb-2" id="projects" role="tabpanel">
         <div class="p-5 mb-4 rounded-3 jumbotron">
           <div class="container-fluid py-5">
             <h2 class="text-center">Projects</h2>
@@ -665,6 +671,760 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-pane fade show active" id="resume" role="tabpanel">
+        <div class="p-5 mb-4 rounded-3 jumbotron">
+          <div class="container-fluid py-5">
+            <h2 class="text-center">Résumé</h2>
+          </div>
+        </div>
+        <div class="container">
+          <!-- SUMMARY  -->
+          <div class="col mb-2">
+            <h3>Summary</h3>
+            Confident and charismatic leader with drive and will to grow in a
+            role where his talents, skills, and visions fuel consistent
+            achievement that benefits the company and its people. Experience in
+            desktop/server administration, networking, and web development.
+          </div>
+
+          <!-- Skills -->
+          <h3>Skills</h3>
+          <ul
+            class="nav mb-3 row row-cols-1 row-cols-md-3 text-center"
+            id="skillsTabs"
+            role="tablist"
+          >
+            <!-- Platform Tab -->
+            <li class="nav-item mb-2" role="presentation">
+              <button
+                class="nav-link badge rounded-pill bg-primary fs-4"
+                id="platform-tab"
+                role="tabpanel"
+                data-bs-toggle="tab"
+                data-bs-target="#platform"
+                type="button"
+              >
+                Platforms
+              </button>
+            </li>
+            <!-- Server Tab -->
+            <li class="nav-item mb-2" role="presentation">
+              <button
+                class="nav-link badge rounded-pill bg-primary fs-4"
+                id="server-tab"
+                role="tabpanel"
+                data-bs-toggle="tab"
+                data-bs-target="#server"
+                type="button"
+              >
+                Server
+              </button>
+            </li>
+            <!-- Productivity Suites Tab -->
+            <li class="nav-item mb-2" role="presentation">
+              <button
+                class="nav-link badge rounded-pill bg-primary fs-4"
+                id="productivity-tab"
+                role="tabpanel"
+                data-bs-toggle="tab"
+                data-bs-target="#productivity"
+                type="button"
+              >
+                Productivity Suites
+              </button>
+            </li>
+            <!-- Networking Tab -->
+            <li class="nav-item mb-2" role="presentation">
+              <button
+                class="nav-link badge rounded-pill bg-primary fs-4"
+                id="networking-tab"
+                role="tabpanel"
+                data-bs-toggle="tab"
+                data-bs-target="#networking"
+                type="button"
+              >
+                Networking
+              </button>
+            </li>
+            <!-- Security Tab -->
+            <li class="nav-item mb-2" role="presentation">
+              <button
+                class="nav-link badge rounded-pill bg-primary fs-4"
+                id="security-tab"
+                role="tabpanel"
+                data-bs-toggle="tab"
+                data-bs-target="#security"
+                type="button"
+              >
+                Security
+              </button>
+            </li>
+            <!-- Programming / Scripting Tab -->
+            <li class="nav-item mb-2" role="presentation">
+              <button
+                class="nav-link badge rounded-pill bg-primary fs-4"
+                id="programming-tab"
+                role="tabpanel"
+                data-bs-toggle="tab"
+                data-bs-target="#programming"
+                type="button"
+              >
+                Programming / Scripting
+              </button>
+            </li>
+            <!-- Web Tab -->
+            <li class="nav-item mb-2" role="presentation">
+              <button
+                class="nav-link badge rounded-pill bg-primary fs-4"
+                id="web-tab"
+                role="tabpanel"
+                data-bs-toggle="tab"
+                data-bs-target="#web"
+                type="button"
+              >
+                Web
+              </button>
+            </li>
+            <!-- Virtualization Tab -->
+            <li class="nav-item mb-2" role="presentation">
+              <button
+                class="nav-link badge rounded-pill bg-primary fs-4"
+                id="virtualization-tab"
+                role="tabpanel"
+                data-bs-toggle="tab"
+                data-bs-target="#virtualization"
+                type="button"
+              >
+                Virtualization
+              </button>
+            </li>
+            <!-- ITSM/LCM Tab -->
+            <li class="nav-item mb-2" role="presentation">
+              <button
+                class="nav-link badge rounded-pill bg-primary fs-4"
+                id="itsmlcm-tab"
+                role="tabpanel"
+                data-bs-toggle="tab"
+                data-bs-target="#itsmlcm"
+                type="button"
+              >
+                ITSM / LCM
+              </button>
+            </li>
+            <!-- Automation / Logging Tab -->
+            <li class="nav-item mb-2" role="presentation">
+              <button
+                class="nav-link badge rounded-pill bg-primary fs-4"
+                id="automation-tab"
+                role="tabpanel"
+                data-bs-toggle="tab"
+                data-bs-target="#automation"
+                type="button"
+              >
+                Automation / Logging
+              </button>
+            </li>
+            <!-- Cloud Tab -->
+            <li class="nav-item mb-2" role="presentation">
+              <button
+                class="nav-link badge rounded-pill bg-primary fs-4"
+                id="cloud-tab"
+                role="tabpanel"
+                data-bs-toggle="tab"
+                data-bs-target="#cloud"
+                type="button"
+              >
+                Cloud
+              </button>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="skillsTabsContent">
+            <!-- Platforms -->
+            <div
+              class="tab-pane fade"
+              id="platform"
+              role="tabpanel"
+              aria-labelledby="platform-tab"
+            >
+              <ul>
+                <li>Windows 7/8/8.1/10</li>
+                <li>Mac OS X</li>
+                <li>Linux</li>
+              </ul>
+            </div>
+            <!-- Server -->
+            <div
+              class="tab-pane fade"
+              id="server"
+              role="tabpanel"
+              aria-labelledby="server-tab"
+            >
+              <ul>
+                <li>Windows Server 2016</li>
+                <li>Ubuntu Server</li>
+                <li>Dell PowerEdge</li>
+              </ul>
+            </div>
+            <!-- Productivity -->
+            <div
+              class="tab-pane fade"
+              id="productivity"
+              role="tabpanel"
+              aria-labelledby="productivity-tab"
+            >
+              <ul>
+                <li>MS Office / 365</li>
+                <li>MS Access</li>
+                <li>SharePoint</li>
+                <li>MS 365 Admin</li>
+              </ul>
+            </div>
+            <!-- Networking -->
+            <div
+              class="tab-pane fade"
+              id="networking"
+              role="tabpanel"
+              aria-labelledby="networking-tab"
+            >
+              <ul>
+                <li>Cisco IOS</li>
+                <li>VLANs</li>
+                <li>Subnetting</li>
+                <li>VPNs</li>
+                <li>DNS</li>
+              </ul>
+            </div>
+            <!-- Security -->
+            <div
+              class="tab-pane fade"
+              id="security"
+              role="tabpanel"
+              aria-labelledby="security-tab"
+            >
+              <ul>
+                <li>Malware Analysis</li>
+                <li>Ethical Hacking</li>
+                <li>Cryptography</li>
+              </ul>
+            </div>
+            <!-- Programming / Scripting -->
+            <div
+              class="tab-pane fade"
+              id="programming"
+              role="tabpanel"
+              aria-labelledby="programming-tab"
+            >
+              <ul class="list-group">
+                <li class="list-group-item">HTML, CSS, JavaSript</li>
+                <li class="list-group-item">React, Node.js, Express.js</li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+              </ul>
+            </div>
+            <!-- Web -->
+            <div
+              class="tab-pane fade"
+              id="web"
+              role="tabpanel"
+              aria-labelledby="web-tab"
+            >
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+            <!-- Virtualization -->
+            <div
+              class="tab-pane fade"
+              id="virtualization"
+              role="tabpanel"
+              aria-labelledby="virtualization-tab"
+            >
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+            <!-- ITSM / LCM -->
+            <div
+              class="tab-pane fade"
+              id="itsmlcm"
+              role="tabpanel"
+              aria-labelledby="itsmlcm-tab"
+            >
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+            <!-- Autmoation / Logging -->
+            <div
+              class="tab-pane fade"
+              id="autmoation"
+              role="tabpanel"
+              aria-labelledby="autmoation-tab"
+            >
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+            <!-- Cloud -->
+            <div
+              class="tab-pane fade"
+              id="cloud"
+              role="tabpanel"
+              aria-labelledby="cloud-tab"
+            >
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row row-cols-1 d-none">
+            <!-- Platforms -->
+            <div class="col">
+              <div class="card mb-2">
+                <h4 class="text-center card-header">Platforms</h4>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Windows 7</li>
+                  <li class="list-group-item">Windows 8/8.1</li>
+                  <li class="list-group-item">Windows 10</li>
+                  <li class="list-group-item">Mac OS X</li>
+                  <li class="list-group-item">Linux</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Productivity Suites -->
+            <div class="col">
+              <div class="card mb-2">
+                <h4 class="card-header">Productivity Suites</h4>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">MS Office/365</li>
+                  <li class="list-group-item">Access</li>
+                  <li class="list-group-item">SharePoint</li>
+                  <li class="list-group-item">MS 365 Admin</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Server -->
+            <div class="col">
+              <div class="card mb-2">
+                <h4 class="card-header">Server</h4>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Windows Server 2016</li>
+                  <li class="list-group-item">Ubuntu</li>
+                  <li class="list-group-item">Dell PowerEdge</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Networking -->
+            <div class="col">
+              <div class="card mb-2">
+                <h4 class="card-header">Networking</h4>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cisco IOS</li>
+                  <li class="list-group-item">VLANs</li>
+                  <li class="list-group-item">Subnetting</li>
+                  <li class="list-group-item">VPNs</li>
+                  <li class="list-group-item">DNS</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Security -->
+            <div class="col">
+              <div class="card mb-2">
+                <h4 class="card-header">Security</h4>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Malware Analysis</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Programming/Scripting -->
+            <div class="col">
+              <div class="card mb-2">
+                <h4 class="card-header">Programming/Scripting</h4>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">HTML</li>
+                  <li class="list-group-item">CSS</li>
+                  <li class="list-group-item">Bootstrap</li>
+                  <li class="list-group-item">JavaScript</li>
+                  <li class="list-group-item">JQuery</li>
+                  <li class="list-group-item">Node.js</li>
+                  <li class="list-group-item">Express.js</li>
+                  <li class="list-group-item">React.js</li>
+                  <li class="list-group-item">PHP</li>
+                  <li class="list-group-item">.NET</li>
+                  <li class="list-group-item">SQL, PostgreSQL</li>
+                  <li class="list-group-item">Java</li>
+                  <li class="list-group-item">PowerShell</li>
+                  <li class="list-group-item">Python</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Web -->
+            <div class="col">
+              <div class="card mb-2">
+                <h4 class="card-header">Web</h4>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Django</li>
+                  <li class="list-group-item">WordPress</li>
+                  <li class="list-group-item">Hosting</li>
+                  <li class="list-group-item">Design</li>
+                  <li class="list-group-item">Administration</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Virtualization -->
+            <div class="col">
+              <div class="card mb-2">
+                <h4 class="card-header">Virtualization</h4>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">VMware Workstation 14</li>
+                  <li class="list-group-item">Virtualbox</li>
+                  <li class="list-group-item">Hyper-V</li>
+                </ul>
+              </div>
+            </div>
+            <!-- ITSM/LCM -->
+            <div class="col">
+              <div class="card mb-2">
+                <h4 class="card-header">ITSM/LCM</h4>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">ServiceNow</li>
+                  <li class="list-group-item">TFS</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Automation/Logging -->
+            <div class="col">
+              <div class="card mb-2">
+                <h4 class="card-header">Automation/Logging</h4>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Elastic Stack</li>
+                  <li class="list-group-item">Ansible</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Cloud -->
+            <div class="col">
+              <div class="card mb-2">
+                <h4 class="card-header">Cloud</h4>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">AWS</li>
+                  <li class="list-group-item">Azure</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <h3>Certifications</h3>
+          <div class="row row-cols-3 mb-2">
+            <!-- AWS -->
+            <div class="col">
+              <div class="card">
+                <img
+                  class="card-img-top"
+                  src="assets/images/aws-certified-logo_color-horz_360x60.png"
+                  alt="AWS Certified"
+                />
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <img
+                      src="assets/images/cloud-practitioner-tag_360x32.png"
+                      alt="Cloud Practitioner"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- CompTIA -->
+            <div class="col">
+              <div class="card">
+                <img class="card-img-top" src="" alt="CompTIA Certified" />
+                <img
+                  width="200"
+                  src="assets/images/Aplus Logo Certified CE.png"
+                  alt="Cloud Practitioner"
+                  class="mb-2"
+                />
+                <img
+                  width="200"
+                  src="assets/images/NetworkPlus Logo Certified CE.png"
+                  alt="Cloud Practitioner"
+                />
+              </div>
+            </div>
+
+            <!-- Cisco -->
+            <div class="col">
+              <div class="card">
+                <img
+                  class="card-img-top"
+                  src="assets/images/aws-certified-logo_color-horz_360x60.png"
+                  alt="AWS Certified"
+                />
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item text-center">
+                    <img
+                      src="assets/images/ccent_network_large.jpg"
+                      alt="Cloud Practitioner"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Work Experience  -->
+          <h3>Work Experience</h3>
+          <div class="row row-cols-1 row-cols-md-3 mb-2">
+            <!-- JDP Enterprises, LLC, Owner -->
+            <div class="col mb-2">
+              <div class="card h-100">
+                <div class="card-header text-center">
+                  <h4>Owner</h4>
+                  <div>JDP Enterprises, LLC</div>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <h5>Desktop Support</h5>
+                  </li>
+                  <li class="list-group-item">
+                    Computer setup and customizations
+                  </li>
+                  <li class="list-group-item">
+                    <h5>Network Configuration</h5>
+                  </li>
+                  <li class="list-group-item">Setup and</li>
+                  <li class="list-group-item">
+                    <h5>SaaS Service Management</h5>
+                  </li>
+                  <li class="list-group-item">Microsoft 365 administration</li>
+                  <li class="list-group-item"></li>
+                </ul>
+                <div class="card-body"></div>
+                <div class="card-footer">
+                  <div>September 2017 – Present (5 yrs 2 mos)</div>
+                  <div>Honolulu, HI</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- HMSA (Full-Time) -->
+            <div class="col mb-2">
+              <div class="card h-100">
+                <div class="card-header text-center">
+                  <h4>IT Project Administrator</h4>
+                  <div>Hawaii Medical Service Associaton</div>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <h5>Project Management</h5>
+                  </li>
+                  <li class="list-group-item">
+                    Planned, scheduled, and managed deployment of laptops to
+                    over 800 staff, including converting from virtual desktop to
+                    VPN
+                  </li>
+                  <li class="list-group-item">
+                    Spearheaded IT departments transition from in-office to
+                    working from home.
+                  </li>
+                </ul>
+                <div class="card-body"></div>
+                <div class="card-footer">
+                  <div>December 2019 – Present (2 years)</div>
+                  <div>Honolulu, HI</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- HMSA (Contract) -->
+            <div class="col mb-2">
+              <div class="card h-100">
+                <div class="card-header text-center">
+                  <h4>IT Project Coordinator</h4>
+                  <div>Hawaii Medical Service Association</div>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <h5>Project Management</h5>
+                  </li>
+                  <li class="list-group-item">
+                    Planned, scheduled, and managed org-wide conversion of
+                    desktop systems from Windows 7 to Windows 10.
+                  </li>
+                  <li class="list-group-item">
+                    Coordinated scheduling, communication, and reporting.
+                  </li>
+                  <li class="list-group-item">
+                    Leveraged PowerShell scripting to automate tasks.
+                  </li>
+                  <li class="list-group-item">
+                    Developed training and usage guides for new Windows 10
+                    system for over 1200 staff.
+                  </li>
+                </ul>
+                <div class="card-body"></div>
+                <div class="card-footer">
+                  <div>April 2019 – December 2019 (8 months)</div>
+                  <div>Honolulu, HI</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Geek Squad, Advanced Repair Agent -->
+            <div class="col mb-2">
+              <div class="card h-100">
+                <div class="card-header text-center">
+                  <h4>Advanced Repair Agent</h4>
+                  <div>Geek Squad</div>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <h5>Hardware & Software Repairs</h5>
+                  </li>
+                  <li class="list-group-item">
+                    Custom PC builds and upgrades; Hardware and software
+                    installations
+                  </li>
+                  <li class="list-group-item">Apple iOS and iPhone repair</li>
+                  <li class="list-group-item">Customer engagement</li>
+                </ul>
+                <div class="card-body"></div>
+                <div class="card-footer">
+                  <div>April 2017 – September 2020</div>
+                  <div>Honolulu, HI</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ACTT, IT Instructor -->
+            <div class="col mb-2">
+              <div class="card h-100">
+                <div class="card-header text-center">
+                  <h4>IT Instructor</h4>
+                  <div>Advanced Computer Technology Training</div>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <h5>Classroom Instruction</h5>
+                  </li>
+                  <li class="list-group-item">
+                    Developed and presented training plans and materials for
+                    instructing on CompTIA A+ certifications objectives.
+                  </li>
+                </ul>
+                <div class="card-body"></div>
+                <div class="card-footer">
+                  <div>June 2018 – January 2019 (8 months)</div>
+                  <div>Pearl City, HI</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Geek Squad, Consultation Agent -->
+            <div class="col mb-2">
+              <div class="card h-100">
+                <div class="card-header text-center">
+                  <h4>Consultation Agent</h4>
+                  <div>Geek Squad</div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <h5>Responsibility</h5>
+                    <div>Description</div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <div>July 2017 – August 2018 (1 year 2 months)</div>
+                  <div>Honolulu, HI</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- OneSource Distributors, Supply Chain Specialist -->
+            <div class="col mb-2">
+              <div class="card h-100">
+                <div class="card-header text-center">
+                  <h4>Supply Chain Specialist</h4>
+                  <div>OneSource Distributors</div>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><h5>Process Improvement</h5></li>
+                  <li class="list-group-item"></li>
+                  <li class="list-group-item"></li>
+                  <li class="list-group-item"></li>
+                </ul>
+
+                <div class="card-body"></div>
+                <div class="card-footer">
+                  <div>December 2015 – March 2017 (1 yr 4 mos)</div>
+                  <div>Honolulu, HI</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- OneSource Distributors, Head of Receiving -->
+            <div class="col mb-2">
+              <div class="card h-100">
+                <div class="card-header text-center">
+                  <h4>Head of Receiving</h4>
+                  <div>OneSource Distributors</div>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><h5>Process Improvement</h5></li>
+                  <li class="list-group-item">
+                    Implemented shared spreadsheets of incoming deliveries to
+                    communicate project lead times to sales staff.
+                  </li>
+                  <li class="list-group-item">
+                    Managed receiving team on large projects.
+                  </li>
+                </ul>
+                <div class="card-body"></div>
+                <div class="card-footer">
+                  <div>January 2015 – December 2015 (1 year)</div>
+                  <div>Honolulu, HI</div>
+                </div>
+              </div>
+            </div>
+
+            Owner – JDP Enterprises, LLC, Honolulu, HI SEP 2017 – Present •
+            Desktop repair services; Small office/Home office networking; Mail
+            migrations; MS 365 Administration; Remote support; web design and
+            development; online card capture and payment systems integration.
+          </div>
+
+          <!-- EDUCATION -->
+          <div class="col md-2">
+            <h3>Education</h3>
+            AS in Computer, Security, and Networking Technologies MAY 2020
+            Honolulu Community College Honolulu, HI Hardware and Software
+            Troubleshooting • Information Security • Advanced Cisco Networking •
+            Programming and Scripting • System Administration •
+            Telecommunication • Ethical Hacking • Malware Analysis and Reverse
+            Engineering
           </div>
         </div>
       </section>
