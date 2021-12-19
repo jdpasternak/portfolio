@@ -14,28 +14,24 @@
 
 body {
   font-family: Roboto, sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 body::-webkit-scrollbar {
   display: none;
 }
 
-body {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.jumbotron {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.1),
-    rgba(0, 0, 0, 0.1)
-  );
-}
-
-.jumbotron h2 {
+/* .jumbotron h2 {
   font-family: Monoton, cursive;
-}
+} */
 
 h1,
 h2,
@@ -44,115 +40,4 @@ h4,
 h5,
 h6 {
   font-family: Kanit, cursive;
-}
-
-.jumbotron h2 {
-  font-size: 5rem;
-}
-
-.text-justify {
-  text-align: justify;
-}
-
-/* Header */
-
-/* Sections */
-
-/* Footer */
-
-/* MEDAI QUERIES */
-
-/* Tablet */
-@media screen and (max-width: 768px) {
-  .about {
-    flex: none;
-    text-align: justify;
-  }
-
-  .about img {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 20px;
-  }
-
-  .content,
-  section {
-    display: block;
-  }
-
-  .heading,
-  .content {
-    flex: none;
-    display: block;
-    border: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .heading {
-    font-size: 36px;
-    text-align: center;
-    width: 60%;
-    border-bottom: 3px solid var(--primary-color);
-    margin: 20px auto;
-  }
-
-  .project-tile {
-    margin: 2%;
-  }
-
-  .contact .content {
-    text-align: center;
-    font-size: 20px;
-  }
-
-  .contact .content h3 {
-    font-size: 28px;
-  }
-}
-/* Mobile */
-@media screen and (max-width: 480px) {
-  header h1 {
-    display: block;
-    width: 100%;
-    padding: 0;
-    text-align: center;
-  }
-
-  header nav {
-    margin: 0;
-    padding: 10px;
-    float: none;
-    text-align: center;
-  }
-
-  header nav ul li {
-    padding: 0;
-  }
-
-  .btn {
-    display: block;
-    text-align: center;
-  }
-
-  .heading {
-    font-size: 24px;
-  }
-
-  .contact .content h3 {
-    font-size: 24px;
-  }
-}
-
-.under-construction {
-  color: white;
-  background-color: tomato;
-  font-size: 36px;
-  text-align: center;
-  padding: 10px;
-  border: 3px dashed black;
-  border-radius: 10px;
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 10px;
 }

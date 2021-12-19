@@ -1,0 +1,39 @@
+<!-- JDP Enterprises, LLC, Owner -->
+                  <h4>Owner</h4>
+                  <div>JDP Enterprises, LLC</div>
+                    <h5>Desktop Support</h5>
+                    <h5>Network Configuration</h5>
+                    <h5>SaaS Service Management</h5>
+                    <h5>Data Services</h5>
+                 
+
+            <!-- HMSA (Full-Time) -->
+                  <h4>IT Project Administrator</h4>
+                  <div>Hawaii Medical Service Associaton</div>
+                
+                    <h5>Project Management</h5>
+                  
+                    Planned, scheduled, and managed deployment of laptops to
+                    over 800 staff, including converting from virtual desktop to
+                    VPN
+                  
+                    Spearheaded IT departments transition from in-office to
+                    working from home.
+                 
+            <!-- HMSA (Contract) -->
+            
+                  <h4>IT Project Coordinator</h4>
+                  <div>Hawaii Medical Service Association</div>
+                
+                    <h5>Project Management</h5>
+                  </li>
+                  <li class="list-group-item">
+                    Planned, scheduled, and managed org-wide conversion of
+                    desktop systems from Windows 7 to Windows 10.
+                  
+                    Coordinated scheduling, communication, and reporting.
+                 
+                    Leveraged PowerShell scripting to automate tasks.
+                 
+                    Developed training and usage guides for new Windows 10
+                    system for over 1200 staff.
