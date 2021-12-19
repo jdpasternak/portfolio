@@ -148,10 +148,8 @@ const generateProjects = () => {
 const generateProjectsPage = () => {
   return [
     `<h2>Projects</h2>`,
-    `<div class="container">`,
     `<div class="row">`,
     `${generateProjects()}`,
-    `</div>`,
     `</div>`,
   ].join("");
 };
