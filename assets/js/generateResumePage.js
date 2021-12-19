@@ -292,10 +292,31 @@ const generateEducation = () => {};
 const generateResumePage = () => {
   return [
     `<section id="resume">`,
+    `  <div class="row">`,
+    `    <div class="col s12 m9 l10">`,
+    `      <div id="summary" class="section scrollspy">`,
     generateSummary(),
+    `      </div>`,
+    `      <div id="skills" class="section scrollspy">`,
     generateSkills(),
+    `      </div>`,
+    `      <div id="certifications" class="section scrollspy">`,
     generateCertifications(),
+    `      </div>`,
+    `      <div id="work" class="section scrollspy">`,
     generateWork(),
+    `      </div>`,
+    `    </div>`,
+    `    <div class="col hide-on-small-only m2 l1 offset-m1 offset-l1" style="padding-top: 100px;">
+           <ul class="section table-of-contents pinned">
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#education">Education</a></li>
+          </ul>
+        </div>
+      </div>`,
     `</section>`,
   ].join("");
 };
