@@ -16,6 +16,9 @@ $(document).ready(() => {
     $("main").html(generateResumePage());
     makeActive(evt.target);
     $(".collapsible").collapsible();
+    $(".scrollspy").scrollSpy();
+    $(".table-of-contents a").removeClass("active");
+    $(`a[href="#summary"]`).addClass("active");
     $(".sidenav").sidenav("close");
 
     $("#resume .activator, #resume .card-reveal .card-title").on(
