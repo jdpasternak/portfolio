@@ -42,10 +42,8 @@ const generateContactInfo = () => {
 const generateContactsPage = () => {
   return [
     `<h2>Contact Me</h2>`,
-    `<div class="container">`,
     `<div class="row">`,
     generateContactInfo(),
-    `</div>`,
     `</div>`,
   ].join("");
 };
