@@ -36,7 +36,7 @@ $(document).ready(() => {
   });
 
   $("main").html(generateProjectsPage());
-  $("#projectsNav").addClass("active");
+  $("#projectsNav, #projectsNavMobile").addClass("active");
 });
 
 const makeActive = (target) => {
