@@ -20,6 +20,7 @@ $(document).ready(() => {
         $(evt.target).closest("div.card").toggleClass("small");
       }
     );
+    M.AutoInit();
   });
 
   $("#contactNav").on("click", (evt) => {
