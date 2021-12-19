@@ -171,7 +171,7 @@ const resumeData = {
       ],
     },
     {
-      degree: "Certification of Achievement",
+      degree: "Certificate of Achievement",
       study: "Information Assurance",
       school: "Honolulu Community College",
       location: "Honolulu, HI",
@@ -181,7 +181,7 @@ const resumeData = {
         "Courses selected for this certificate, meet the two year core knowledge unit requirements for a college to become recognized as a National Center of Academic Excellence in Cyber Defense Two-Year (CAE2Y). This program, which is sponsored by the NSA and DHS, recognizes colleges which have met their standard of academic excellence in Information Assurance education. Honolulu Community College is currently recognized as a CAE2Y.",
     },
     {
-      degree: "Certification of Achievement",
+      degree: "Certificate of Achievement",
       study: "Networking and Telecommunications",
       school: "Honolulu Community College",
       location: "Honolulu, HI",
@@ -232,7 +232,7 @@ const generateSkills = () => {
   }
 
   return `
-    <h2>Skills</h2>
+    <h2>Skills and Familiar Technologies</h2>
         <ul class="collapsible">
             ${skillsHTML.join("")}
         </ul>
@@ -260,7 +260,7 @@ const generateCertImg = (certImg) => {
 };
 
 const generateCertifications = () => {
-  let certificationsHTML = [`<div class="row">`];
+  let certificationsHTML = [`<h2>Certifications</h2><div class="row">`];
 
   for (const cert of resumeData.certifications) {
     let certHTML = `
@@ -280,7 +280,7 @@ const generateCertifications = () => {
   return certificationsHTML.join("");
 };
 const generateWork = () => {
-  let workHTML = [`<div class="row">`];
+  let workHTML = [`<h2>Work Experience</h2><div class="row">`];
 
   for (const work of resumeData.work) {
     let html = `
