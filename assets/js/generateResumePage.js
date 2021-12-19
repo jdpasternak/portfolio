@@ -148,23 +148,49 @@ const resumeData = {
       location: "Honolulu, HI",
     },
   ],
-  education: {
-    degree: "Associates in Science",
-    study: "Computer Security and Networking Technologies",
-    school: "Honolulu Community College",
-    location: "Honolulu, HI",
-    graduation: "May 2020",
-    disiplines: [
-      "Hardware and Software Troubleshooting",
-      "Information Security",
-      "Advanced Cisco Networking",
-      "Programming and Scripting",
-      "System Administration",
-      "Telecommunication",
-      "Ethical Hacking",
-      "Malware Analysis and Reverse Engineering",
-    ],
-  },
+  education: [
+    {
+      degree: "Associates in Science",
+      study: "Computer Security and Networking Technologies",
+      school: "Honolulu Community College",
+      location: "Honolulu, HI",
+      graduation: "May 2020",
+      degreeLink: "https://www.honolulu.hawaii.edu/csnt",
+      description: `The Associate in Science (AS) Degree in the Computing, Security, and Networking Technology program is a two year course of study that prepares the student for entry-level employment in the field of Information and Communications Technology. Core courses are designed to give students a firm foundation in the basics of computers, networking, system administration and information security. The AS Degree also provides options for a Certificate of Achievement in Networking and Telecommunications, and a Certificate of Achievement in Information Assurance.
+
+      Elective courses allow students to further specialize in a field of study. Students will have the opportunity to participate in an internship or cooperative education experience before completing the program. Certain CSNT courses also help to prepare the student to take the following Information and Communications Technology industry certification exams: Computer Technician A+, Cisco Certified Network Associate (CCNA), Microsoft Certified Professional, Security+, Linux+, and VMware Certified Professional. The CSNT program is a Cisco Academy, a CompTIA Training Center, a Microsoft Regional Academy, and a VMware Academy.`,
+      disiplines: [
+        "Hardware and Software Troubleshooting",
+        "Information Security",
+        "Advanced Cisco Networking",
+        "Programming and Scripting",
+        "System Administration",
+        "Telecommunication",
+        "Ethical Hacking",
+        "Malware Analysis and Reverse Engineering",
+      ],
+    },
+    {
+      degree: "Certification of Achievement",
+      study: "Information Assurance",
+      school: "Honolulu Community College",
+      location: "Honolulu, HI",
+      graduation: "May 2020",
+      degreeLink: "https://www.honolulu.hawaii.edu/csnt",
+      description:
+        "Courses selected for this certificate, meet the two year core knowledge unit requirements for a college to become recognized as a National Center of Academic Excellence in Cyber Defense Two-Year (CAE2Y). This program, which is sponsored by the NSA and DHS, recognizes colleges which have met their standard of academic excellence in Information Assurance education. Honolulu Community College is currently recognized as a CAE2Y.",
+    },
+    {
+      degree: "Certification of Achievement",
+      study: "Networking and Telecommunications",
+      school: "Honolulu Community College",
+      location: "Honolulu, HI",
+      graduation: "May 2020",
+      degereLink: "https://www.honolulu.hawaii.edu/csnt",
+      description:
+        "Courses within this certificate provide the student with a solid foundation in networking and telecommunications. This certificate is built upon industry standards and provides support for the following industry certifications: A+, Security+, Linux+, CCNA.",
+    },
+  ],
 };
 
 const generateSummary = () => {
@@ -287,15 +313,66 @@ const generateWork = () => {
 
   return workHTML.join("");
 };
-const generateEducation = () => {};
+
+const generateEducation = () => {
+  const education = resumeData.education;
+  let html = [`<h2>Education</h2>`];
+  for (const e of education) {
+    html.push(`
+    <div class="card sticky-action">
+      <div class="card-content">
+        <span class="card-title"><i>${e.degree}</i> in <b>${e.study}</b></span>
+        <p>${e.school}<p>
+        <p>${e.graduation}</p>
+      </div>
+      <div class="card-action">
+        <a href="${e.degreeLink}" target="_blank">View Degree Program</a>
+        <span class="material-icons activator right card-title">more_vert</span>
+      </div>
+      <div class="card-reveal">
+      <span class="card-title material-icons right">close</span>
+        <figure>
+          <blockquote cite="${e.degreeLink}">${e.description}</blockquote>
+          <figcaption>${e.school}</figcation>
+        </figure>
+      </div>
+    </div>
+    `);
+  }
+  return html.join("");
+};
 
 const generateResumePage = () => {
   return [
     `<section id="resume">`,
+    `  <div class="row">`,
+    `    <div class="col s12 m9 l10">`,
+    `      <div id="summary" class="section scrollspy">`,
     generateSummary(),
+    `      </div>`,
+    `      <div id="skills" class="section scrollspy">`,
     generateSkills(),
+    `      </div>`,
+    `      <div id="certifications" class="section scrollspy">`,
     generateCertifications(),
+    `      </div>`,
+    `      <div id="work" class="section scrollspy">`,
     generateWork(),
+    `      </div>`,
+    `      <div id="education" class="section scrollspy">`,
+    generateEducation(),
+    `      </div>`,
+    `    </div>`,
+    `    <div class="col hide-on-small-only m2 l1 offset-m1 offset-l1" style="padding-top: 100px;">
+           <ul class="section table-of-contents pinned">
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#education">Education</a></li>
+          </ul>
+        </div>
+      </div>`,
     `</section>`,
   ].join("");
 };

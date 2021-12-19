@@ -6,34 +6,41 @@ import { generateResumePage } from "./generateResumePage.js";
 $(document).ready(() => {
   $(".sidenav").sidenav();
 
-  $("#projectsNav").on("click", (evt) => {
+  $("#projectsNav, #projectsNavMobile").on("click", (evt) => {
     $("main").html(generateProjectsPage());
     makeActive(evt.target);
+    $(".sidenav").sidenav("close");
   });
 
-  $("#resumeNav").on("click", (evt) => {
+  $("#resumeNav, #resumeNavMobile").on("click", (evt) => {
     $("main").html(generateResumePage());
     makeActive(evt.target);
+    $(".collapsible").collapsible();
+    $(".scrollspy").scrollSpy();
+    $(".table-of-contents a").removeClass("active");
+    $(`a[href="#summary"]`).addClass("active");
+    $(".sidenav").sidenav("close");
+
     $("#resume .activator, #resume .card-reveal .card-title").on(
       "click",
       (evt) => {
         $(evt.target).closest("div.card").toggleClass("small");
       }
     );
-    M.AutoInit();
   });
 
-  $("#contactNav").on("click", (evt) => {
+  $("#contactNav, #contactNavMobile").on("click", (evt) => {
     $("main").html(generateContactsPage());
     makeActive(evt.target);
+    $(".sidenav").sidenav("close");
   });
 
   $("main").html(generateProjectsPage());
-  $("#projectsNav").addClass("active");
+  $("#projectsNav, #projectsNavMobile").addClass("active");
 });
 
 const makeActive = (target) => {
-  $("nav li").removeClass("active");
+  $("nav li, .sidenav li").removeClass("active");
   $(target).closest("li").addClass("active");
 };
 
