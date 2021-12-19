@@ -6,12 +6,14 @@ import { generateResumePage } from "./generateResumePage.js";
 $(document).ready(() => {
   $(".sidenav").sidenav();
 
+  // Projects Page
   $("#projectsNav, #projectsNavMobile").on("click", (evt) => {
     $("main").html(generateProjectsPage());
     makeActive(evt.target);
     $(".sidenav").sidenav("close");
   });
 
+  // Resume Page
   $("#resumeNav, #resumeNavMobile").on("click", (evt) => {
     $("main").html(generateResumePage());
     makeActive(evt.target);
@@ -29,12 +31,14 @@ $(document).ready(() => {
     );
   });
 
+  // Contact Page
   $("#contactNav, #contactNavMobile").on("click", (evt) => {
     $("main").html(generateContactsPage());
     makeActive(evt.target);
     $(".sidenav").sidenav("close");
   });
 
+  // Intial View
   $("main").html(generateProjectsPage());
   $("#projectsNav, #projectsNavMobile").addClass("active");
 });
