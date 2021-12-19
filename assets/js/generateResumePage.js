@@ -287,7 +287,9 @@ const generateWork = () => {
 
   return workHTML.join("");
 };
-const generateEducation = () => {};
+const generateEducation = () => {
+    
+};
 
 const generateResumePage = () => {
   return [
