@@ -101,49 +101,49 @@ const resumeData = {
     {
       title: "IT Project Administrator",
       company: "Hawaii Medical Service Association",
-      comapnySite: "https://hmsa.com/",
+      companySite: "https://hmsa.com/",
       duration: "December 2019 - Present (2 yrs)",
       location: "Honolulu, HI",
     },
     {
       title: "IT Project Coordinator",
       company: "Hawaii Medical Service Association",
-      comapnySite: "https://hmsa.com/",
+      companySite: "https://hmsa.com/",
       duration: "April 2019 - December 2019 (8 mos)",
       location: "Honolulu, HI",
     },
     {
       title: "Advanced Repair Agent",
       company: "Geek Squad",
-      comapnySite: "https://geeksquad.com",
+      companySite: "https://geeksquad.com",
       duration: "April 2017 - September 2020",
       location: "Honolulu, HI",
     },
     {
       title: "IT Instructor",
       company: "Advanced Computer Technology Training, Inc.",
-      comapnySite: "https://actt-inc.com/",
+      companySite: "https://actt-inc.com/",
       duration: "June 2018 - January 2019 (8 mos)",
       location: "Pearl City, HI",
     },
     {
       title: "Consultation Agent",
       company: "Geek Squad",
-      comapnySite: "https://geeksquad.com",
+      companySite: "https://geeksquad.com",
       duration: "July 2017 - August 2018 (1 yr 2 mos)",
       location: "Honolulu, HI",
     },
     {
       title: "Supply Chain Specialist",
       company: "OneSource Distributors",
-      comapnySite: "https://www.1sourcedist.com/",
+      companySite: "https://www.1sourcedist.com/",
       duration: "December 2015 - March 2017 (1 yr 4 mos)",
       location: "Honolulu, HI",
     },
     {
       title: "Head of Receiving",
       company: "OneSource Distributors",
-      comapnySite: "https://www.1sourcedist.com/",
+      companySite: "https://www.1sourcedist.com/",
       duration: "January 2015 - December 2015 (1 yr)",
       location: "Honolulu, HI",
     },
@@ -253,13 +253,49 @@ const generateCertifications = () => {
   certificationsHTML.push(`</div>`);
   return certificationsHTML.join("");
 };
-const generateWork = () => {};
+const generateWork = () => {
+  let workHTML = [`<div class="row">`];
+
+  for (const work of resumeData.work) {
+    let html = `
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title activator center">${work.title}<i class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal">
+                    <div class="container">
+                        <div class="row">
+                            <span class="card-title center">${work.title}</span>
+                            <div class="col">
+                                
+                                <p>${work.company}</p>
+                                <p>${work.location}</p>
+                                <p>${work.duration}</p>
+                                <a href="${work.companySite}" target="_blank">View Company Site</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+    workHTML.push(html);
+  }
+
+  workHTML.push(`</div>`);
+
+  return workHTML.join("");
+};
 const generateEducation = () => {};
 
 const generateResumePage = () => {
-  return [generateSummary(), generateSkills(), generateCertifications()].join(
-    ""
-  );
+  return [
+    generateSummary(),
+    generateSkills(),
+    generateCertifications(),
+    generateWork(),
+  ].join("");
 };
 
 export { generateResumePage };

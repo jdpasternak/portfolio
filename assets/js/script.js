@@ -11,4 +11,8 @@ $("#projects").append(generateProjectsPage());
 $("#contact").append(generateContactsPage());
 $("#resume").append(generateResumePage());
 
+$("#resume .activator, #resume .card-reveal .card-title").on("click", (evt) => {
+  $(evt.target).closest("div.card").toggleClass("small");
+});
+
 M.AutoInit();
