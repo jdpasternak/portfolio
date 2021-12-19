@@ -150,7 +150,7 @@ const resumeData = {
   ],
   education: [
     {
-      degree: "Associates in Science",
+      degree: "Associate in Science",
       study: "Computer Security and Networking Technologies",
       school: "Honolulu Community College",
       location: "Honolulu, HI",
