@@ -1,4 +1,4 @@
-import { generateProjectsPage } from "./generateProjects.js";
+import { generateProjectsPage } from "./generateProjectsPage.js";
 
 // Initialize sidenav
 $(document).ready(() => $(".sidenav").sidenav());
