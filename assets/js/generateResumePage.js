@@ -188,11 +188,13 @@ const generateSkillsCollection = (skillsList) => {
     skillsCollection.push(`<li class="collection-item">${skill}</li>`);
   }
   skillsCollection.push(`</ul>`);
+
+  return skillsCollection.join("");
 };
 
 const generateSkills = () => {
   let skillsHTML = [];
-  for (skill of resumeData.skills) {
+  for (const skill of resumeData.skills) {
     skillsHTML.push(`
         <li>
             <div class="collapsible-header">${skill.group}</div>
@@ -213,7 +215,10 @@ const generateSkills = () => {
 
 const generateCertLink = (certLink) => {
   if (certLink) {
-    return `<a href="${certLink}>View on Credly</a>`;
+    return `
+    <div class="card-action">
+        <a href="${certLink}" target="_blank">View on Credly</a>
+    </div>`;
   }
   return "";
 };
@@ -222,14 +227,14 @@ const generateCertImg = (certImg) => {
   if (certImg) {
     return `
     <div class="card-image">
-        <img src="${certImg} />
+        <img src="${certImg}" />
     </div>`;
   }
   return "";
 };
 
 const generateCertifications = () => {
-  certificationsHTML = [];
+  let certificationsHTML = [`<div class="row">`];
 
   for (const cert of resumeData.certifications) {
     let certHTML = `
@@ -239,19 +244,22 @@ const generateCertifications = () => {
                     <div class="card-content">
                         <span class="card-title">${cert.name}</span>
                     </div>
-                    <div class="card-action">
                         ${generateCertLink(cert.link)}
-                    </div>
                 </div>
             </div>
         `;
     certificationsHTML.push(certHTML);
   }
+  certificationsHTML.push(`</div>`);
   return certificationsHTML.join("");
 };
 const generateWork = () => {};
 const generateEducation = () => {};
 
-const generateResumePage = () => {};
+const generateResumePage = () => {
+  return [generateSummary(), generateSkills(), generateCertifications()].join(
+    ""
+  );
+};
 
 export { generateResumePage };
