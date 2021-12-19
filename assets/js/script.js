@@ -14,6 +14,12 @@ $(document).ready(() => {
   $("#resumeNav").on("click", (evt) => {
     $("main").html(generateResumePage());
     makeActive(evt.target);
+    $("#resume .activator, #resume .card-reveal .card-title").on(
+      "click",
+      (evt) => {
+        $(evt.target).closest("div.card").toggleClass("small");
+      }
+    );
   });
 
   $("#contactNav").on("click", (evt) => {
@@ -23,10 +29,6 @@ $(document).ready(() => {
 
   $("main").html(generateProjectsPage());
   $("#projectsNav").addClass("active");
-});
-
-$("#resume .activator, #resume .card-reveal .card-title").on("click", (evt) => {
-  $(evt.target).closest("div.card").toggleClass("small");
 });
 
 const makeActive = (target) => {
