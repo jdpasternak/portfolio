@@ -5,19 +5,33 @@ import { generateResumePage } from "./generateResumePage.js";
 // Initialize sidenav
 $(document).ready(() => {
   $(".sidenav").sidenav();
-  $("#projectsNav").on("click", () => {
+
+  $("#projectsNav").on("click", (evt) => {
     $("main").html(generateProjectsPage());
+    makeActive(evt.target);
   });
-  $("#resumeNav").on("click", () => {
+
+  $("#resumeNav").on("click", (evt) => {
     $("main").html(generateResumePage());
+    makeActive(evt.target);
   });
-  $("#contactNav").on("click", () => {
+
+  $("#contactNav").on("click", (evt) => {
     $("main").html(generateContactsPage());
+    makeActive(evt.target);
   });
+
+  $("main").html(generateProjectsPage());
+  $("#projectsNav").addClass("active");
 });
 
 $("#resume .activator, #resume .card-reveal .card-title").on("click", (evt) => {
   $(evt.target).closest("div.card").toggleClass("small");
 });
+
+const makeActive = (target) => {
+  $("nav li").removeClass("active");
+  $(target).closest("li").addClass("active");
+};
 
 M.AutoInit();
