@@ -73,7 +73,7 @@ const projects = [
   },
   {
     title: "Coding Quiz",
-    imageSrc: "./assets/images/coding-quiz.PNG",
+    imageSrc: "./assets/images/coding-quiz.png",
     description:
       "Quiz yourself on various topics. Currently contains content for JavaScript. Put your initials to save your high score and view the leaderboard.",
     site: "https://jdpasternak.github.io/coding-quiz",
