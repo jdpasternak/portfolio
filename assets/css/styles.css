@@ -21,6 +21,15 @@ body {
   scrollbar-width: none;
 }
 
+.card-reveal {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.card-reveal::-webkit-scrollbar {
+  display: none;
+}
+
 main {
   flex: 1 0 auto;
 }
