@@ -370,6 +370,7 @@ const generateResumePage = () => {
             <li><a href="#certifications">Certifications</a></li>
             <li><a href="#work">Work</a></li>
             <li><a href="#education">Education</a></li>
+            <li><a class="btn-flat" href="assets/images/Jake Pasternak.pdf" style="margin-top: 10px;" target="_blank">Download PDF</a></li>
           </ul>
         </div>
       </div>`,
