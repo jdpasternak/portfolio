@@ -1,0 +1,24 @@
+<div class="col s12 m6">
+  <div class="card medium">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img src="{{project.imageSrc}}" class="activator" />
+
+    </div>
+    <div class="card-content">
+      <span class="card-title activator">{{project.title}}<i
+          class="material-icons right"
+        >more_vert</i></span>
+    </div>
+    <div class="card-action">
+      <a href="{{project.site}}" target="_blank">{{generateAltLinkText(
+        project.siteText )}}</a>
+      <a href="{{project.github}}" target="_blank">GitHub</a>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title">{{ project.title }}<i
+          class="material-icons right"
+        >close</i></span>
+      <p>{{project.description}}</p>
+    </div>
+  </div>
+</div>
