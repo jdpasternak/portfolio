@@ -19,6 +19,7 @@
   "homepage": "https://github.com/jdpasternak/portfolio#readme",
   "dependencies": {
     "express": "^4.17.2",
-    "express-handlebars": "^6.0.2"
+    "express-handlebars": "^6.0.2",
+    "node-fetch": "^2.0.0"
   }
 }
