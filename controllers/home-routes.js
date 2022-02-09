@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const fetch = require("node-fetch");
+const resumeData = require("../data/resumeData.json");
 
 const contactInfo = [
   {
@@ -50,7 +51,7 @@ router.get("/projects", async (req, res) => {
 });
 
 router.get("/resume", (req, res) => {
-  res.render("resume");
+  res.render("resume", { resumeData });
 });
 
 router.get("/contact", (req, res) => {
