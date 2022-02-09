@@ -1,0 +1,16 @@
+<h2>Contact</h2>
+<div class="row">
+  {{#each contacts as |contact|}}
+    <div class="col s12 m3">
+      <div class="card">
+        <a href="{{contact.link}}" target="_blank">
+          <div class="card-content center">
+            <span class="card-title center">{{{contact.icon}}}</span>
+            <div class="center">{{contact.linkText}}</div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  {{/each}}
+</div>
