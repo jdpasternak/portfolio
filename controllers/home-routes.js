@@ -1,6 +1,11 @@
 const router = require("express").Router();
 const fetch = require("node-fetch");
 
+// Hompeage
+router.get("/", (req, res) => {
+  res.render("homepage");
+});
+
 router.get("/projects", async (req, res) => {
   // const oReq = new XMLHttpRequest();
   // oReq.addEventListener("load", function () {
@@ -16,9 +21,17 @@ router.get("/projects", async (req, res) => {
   if (response.ok) {
     response.json().then((data) => {
       res.render("projects", { projects: data });
-      console.log(data);
+      // console.log(data);
     });
   }
+});
+
+router.get("/resume", (req, res) => {
+  res.render("resume");
+});
+
+router.get("/contact", (req, res) => {
+  res.render("contact");
 });
 
 module.exports = router;
