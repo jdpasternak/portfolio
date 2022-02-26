@@ -1,9 +1,10 @@
 <div class="row">
   <div class="col s12 m9 l10">
+
     {{! Summary }}
-    <h2>Summary</h2>
     <div class="row">
-      <div class="col s12">
+      <div id="summary" class="col s12 section scrollspy">
+        <h2>Summary</h2>
         <div class="card">
           <div class="card-content">
             <p>{{resumeData.summary}}</p>
@@ -13,93 +14,70 @@
     </div>
 
     {{! Skills }}
-    <!-- [x] TODO Fix skills generation -->
-    <h2>Skills and Familiar Technologies</h2>
-
-    <ul class="collapsible">
-      {{#each resumeData.skills as |skillGroup|}}
-        <li>
-          <div class="collapsible-header">{{skillGroup.group}}</div>
-          <div class="collapsible-body">
-            <ul class="collection">
-              {{#each skillGroup.skillsList as |skill|}}
+    <div class="row">
+      <div id="skills" class="col s12 section scrollspy">
+        <h2>Skills and Familiar Technologies</h2>
+        <ul class="collapsible">
+          {{#each resumeData.skills as |skillGroup|}}
+          <li>
+            <div class="collapsible-header">
+              {{skillGroup.group}}
+            </div>
+            <div class="collapsible-body">
+              <ul class="collection">
+                {{#each skillGroup.skillsList as |skill|}}
                 <li class="collection-item">{{skill}}</li>
-              {{/each}}
-            </ul>
-          </div>
-        </li>
-      {{/each}}
-    </ul>
+                {{/each}}
+              </ul>
+            </div>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
 
     {{! Certifications }}
-    {{#each resumeData.certifications as |certification|}}
-      <div class="col s12 m4">
-        <div class="card small">
-          <div class="card-image">
-            <img src="{{certification.logo}}" />
-          </div>
-          <div class="card-content">
-              <span class="card-title">{{certification.name}}</span>
-          </div>
-          <div class="card-action">
-              <a href="{{certification.link}}" target="_blank">View on Credly</a>
-          </div>
-        </div>
-      </div>
-    {{/each}}
-
-    {{!-- Work --}}
-    <h2>Work Experience</h2>
     <div class="row">
-      {{#each resumeData.work as |work|}}
-        <div class="col s12">
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-title activator center">
-                        {{work.title}}
-                        <i class="material-icons right">more_vert</i>
-                    </span>
-                </div>
-                <div class="card-reveal">
-                    <div class="container">
-                       <div class="row">
-                           <span class="card-title center">{{work.title}}</span>
-                           <div class="col">
-                               <p>{{work.company}}</p>
-                               <p>{{work.location}}</p>
-                               <p>{{work.duration}}</p>
-                               <a href="{{work.companySite}}" target="_blank">View Company Site</a>
-                           </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      {{/each}}
+      <div id="certifications" class="col s12 section scrollspy">
+        <h2>Certifications</h2>
+        {{#each resumeData.certifications as |certification|}}
+          {{> certification-card certification}}
+        {{/each}}
+      </div>
+    </div>
+    
+    {{!-- Work --}}
+    <div class="row">
+      <div id="work" class="col s12 section scrollspy">
+        <h2>Work Experience</h2>
+        {{#each resumeData.work as |work|}}
+          {{> work-experience-card work}}
+        {{/each}}
+      </div>
     </div>
 
       {{! Education }}
-      <h2>Education</h2>
-        {{#each resumeData.education as |education|}}
-            <div class="card sticky-action">
-                <div class="card-content">
-                    <span class="card-title"><i>{{education.degree}}</i> in <b>{{education.study}}</b></span>
-                    <p>{{education.school}}<p>
-                    <p>{{education.graduation}}</p>
-                </div>
-            <div class="card-action">
-                <a href="{{education.degreeLink}}" target="_blank">View Degree Program</a>
-                <span class="material-icons activator right card-title">more_vert</span>
-            </div>
-            <div class="card-reveal">
-                <span class="card-title material-icons right">close</span>
-                <figure>
-                    <blockquote cite="{{education.degreeLink}}">{{education.description}}</blockquote>
-                    <figcaption>{{education.school}}</figcation>
-                </figure>
-            </div>
+      <div class="row">
+        <div id="education" class="col s12 section scrollspy">
+          <h2>Education</h2>
+          <div class="row">
+            {{#each resumeData.education as |education|}}
+              {{> education-card education}}
+            {{/each}}
+          </div>
         </div>
-        {{/each}}
-  
+      </div>
+  </div>
 
+  {{!-- Scrollspy --}}
+  <div class="col hide-on-small-only m3 l2 fixed">
+    <ul class="section table-of-contents">
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </div>
+</div>
 <script src="/javascript/resume.js"></script>
