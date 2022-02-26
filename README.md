@@ -8,4 +8,4 @@ A portfolio of projects I've worked on.
 
 ## Link
 
-[My Portfolio (Hosted with GitHub Pages)](https://jdpasternak.github.io/portfolio)
+[My Portfolio (Hosted with GitHub Pages)](http://www.jakepasternak.com)
