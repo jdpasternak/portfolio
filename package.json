@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "A portfolio of projects I've worked on.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdpasternak/portfolio.git"
+  },
+  "author": "Jake Pasternak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jdpasternak/portfolio/issues"
+  },
+  "homepage": "https://github.com/jdpasternak/portfolio#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "node-fetch": "^2.0.0"
+  }
+}

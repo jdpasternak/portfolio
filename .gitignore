@@ -1,4 +1,4 @@
 .DS_Store
 .vscode
-notes
+notes*
 node_modules
