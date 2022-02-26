@@ -40,7 +40,7 @@ router.get("/projects", async (req, res) => {
   // oReq.send();
 
   const response = await fetch(
-    "https://api.github.com/users/jdpasternak/repos?sort=updated"
+    "https://api.github.com/users/jdpasternak/repos?sort=updated&per_page=100"
   );
   if (response.ok) {
     response.json().then((data) => {
