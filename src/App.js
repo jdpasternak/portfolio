@@ -8,6 +8,7 @@ import ProjectList from "./components/ProjectList";
 import Resume from "./components/Resume";
 
 import resumeData from "./data/resumeData.json";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route exact path="/projects" element={<ProjectList />} />
             <Route exact path="/resume" element={<Resume {...resumeData} />} />
+            <Route exact path="/contact" element={<Contact />} />
           </Routes>
         </div>
       </main>
