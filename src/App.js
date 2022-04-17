@@ -25,6 +25,7 @@ function App() {
       <main className="container">
         <div className="row">
           <Routes>
+            <Route exact path="/" element={<About />} />
             <Route exact path="/about" element={<About />} />
             <Route exact path="/projects" element={<ProjectList />} />
             <Route exact path="/resume" element={<Resume {...resumeData} />} />
