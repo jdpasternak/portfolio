@@ -10,8 +10,13 @@ import Resume from "./components/Resume";
 import resumeData from "./data/resumeData.json";
 import Contact from "./components/Contact";
 import About from "./components/About";
+import { useEffect } from "react";
+import M from "materialize-css";
 
 function App() {
+  useEffect(() => {
+    M.AutoInit();
+  }, []);
   return (
     <Router>
       <Header>
