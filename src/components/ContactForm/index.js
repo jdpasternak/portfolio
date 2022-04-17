@@ -29,8 +29,6 @@ const ContactForm = () => {
     console.log(contactFormState);
   };
 
-  const handleBlur = (e) => {};
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log(contactFormState);
@@ -73,7 +71,9 @@ const ContactForm = () => {
             <label htmlFor="message">Message</label>
           </div>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn">
+          Submit
+        </button>
         {errorMessage && <span className="red-text"> {errorMessage}</span>}
       </form>
     </div>
