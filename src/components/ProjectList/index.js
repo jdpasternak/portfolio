@@ -11,10 +11,12 @@ const ProjectList = () => {
       .then((response) => response.json())
       .then((data) => setProjects(data));
   }, []);
-  console.log(projects);
   return (
     <div>
-      {projects && projects.map((project) => <Project project={project} />)}
+      {projects &&
+        projects.map((project) => (
+          <Project project={project} key={project.name} />
+        ))}
     </div>
   );
 };
