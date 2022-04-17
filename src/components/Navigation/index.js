@@ -1,31 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
+  const handleClick = (e) => {
+    setCurrentPage(e.target.pathname.split("/")[1]);
+  };
+  const [currentPage, setCurrentPage] = useState("about");
+
   return (
     <div>
       <div className="navbar-fixed">
         <nav className="bg-primary">
           <div className="nav-wrapper container">
-            <a href="/" className="brand-logo">
+            <Link to="/about" className="brand-logo">
               Jake Pasternak
-            </a>
+            </Link>
             <a href="#" data-target="mobile-menu" className="sidenav-trigger">
               <i className="material-icons">menu</i>
             </a>
             <ul className="right hide-on-med-and-down">
-              <li id="aboutMeNav">
-                <Link to="/about">About Me</Link>
+              <li
+                className={currentPage === "about" ? "active" : ""}
+                id="aboutMeNav"
+              >
+                <Link to="/about" onClick={handleClick}>
+                  About Me
+                </Link>
               </li>
-              <li id="projectsNav">
-                <Link to="/projects">Projects</Link>
+              <li
+                className={currentPage === "projects" ? "active" : ""}
+                id="projectsNav"
+              >
+                <Link to="/projects" onClick={handleClick}>
+                  Projects
+                </Link>
               </li>
-              <li id="resumeNav">
-                <Link to="/resume">Résumé</Link>
+              <li
+                className={currentPage === "resume" ? "active" : ""}
+                id="resumeNav"
+              >
+                <Link to="/resume" onClick={handleClick}>
+                  Résumé
+                </Link>
               </li>
-              <li id="contactNav">
-                <Link to="/contact">Contact</Link>
+              <li
+                className={currentPage === "contact" ? "active" : ""}
+                id="contactNav"
+              >
+                <Link to="/contact" onClick={handleClick}>
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
@@ -33,14 +58,37 @@ const Navigation = () => {
       </div>
 
       <ul className="sidenav" id="mobile-menu">
-        <li id="projectsNavMobile">
-          <Link to="/projects">Projects</Link>
+        <li
+          className={currentPage === "about" ? "active" : ""}
+          id="aboutNavMobile"
+        >
+          <Link to="/about" onClick={handleClick}>
+            About Me
+          </Link>
         </li>
-        <li id="resumeNavMobile">
-          <Link to="/resume">Résumé</Link>
+        <li
+          className={currentPage === "projects" ? "active" : ""}
+          id="projectsNavMobile"
+        >
+          <Link to="/projects" onClick={handleClick}>
+            Projects
+          </Link>
         </li>
-        <li id="contactNavMobile">
-          <Link to="/contact">Contact</Link>
+        <li
+          className={currentPage === "resume" ? "active" : ""}
+          id="resumeNavMobile"
+        >
+          <Link to="/resume" onClick={handleClick}>
+            Résumé
+          </Link>
+        </li>
+        <li
+          className={currentPage === "contact" ? "active" : ""}
+          id="contactNavMobile"
+        >
+          <Link to="/contact" onClick={handleClick}>
+            Contact
+          </Link>
         </li>
       </ul>
     </div>
