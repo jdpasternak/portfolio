@@ -15,6 +15,9 @@ const Navigation = () => {
               <i className="material-icons">menu</i>
             </a>
             <ul className="right hide-on-med-and-down">
+              <li id="aboutMeNav">
+                <Link to="/about">About Me</Link>
+              </li>
               <li id="projectsNav">
                 <Link to="/projects">Projects</Link>
               </li>
