@@ -1,4 +1,5 @@
 import ContactCard from "../ContactCard";
+import ContactForm from "../ContactForm";
 
 const Contact = () => {
   const contactInfo = [
@@ -27,6 +28,9 @@ const Contact = () => {
   return (
     <div>
       <h2>Contact</h2>
+      <div className="row">
+        <ContactForm />
+      </div>
       <div className="row">
         {contactInfo.map((contact) => (
           <ContactCard data={contact} key={contact.link} />
