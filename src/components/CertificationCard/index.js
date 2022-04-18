@@ -4,7 +4,7 @@ const CertificationCard = ({ data }) => {
     <div className="col s12 m4">
       <div className="card small">
         <div className="card-image">
-          <img src={`${logo}`} alt={`${name} logo`} />
+          <img src={`${process.env.PUBLIC_URL + logo}`} alt={`${name} logo`} />
         </div>
         <div className="card-content">
           <span className="card-title">{name}</span>

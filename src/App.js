@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Navigate,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
@@ -10,13 +15,14 @@ import Resume from "./components/Resume";
 import resumeData from "./data/resumeData.json";
 import Contact from "./components/Contact";
 import About from "./components/About";
-import { useEffect } from "react";
-import M from "materialize-css";
+// import { useEffect } from "react";
+// import M from "materialize-css";
 
 function App() {
-  useEffect(() => {
-    M.AutoInit();
-  }, []);
+  // useEffect(() => {
+  //   M.AutoInit();
+  // }, []);
+
   return (
     <Router>
       <Header>
@@ -25,11 +31,15 @@ function App() {
       <main className="container">
         <div className="row">
           <Routes>
-            <Route exact path="/" element={<About />} />
             <Route exact path="/about" element={<About />} />
             <Route exact path="/projects" element={<ProjectList />} />
             <Route exact path="/resume" element={<Resume {...resumeData} />} />
             <Route exact path="/contact" element={<Contact />} />
+            <Route
+              exact
+              path="*"
+              element={<Navigate to="/about" replace index />}
+            />
           </Routes>
         </div>
       </main>

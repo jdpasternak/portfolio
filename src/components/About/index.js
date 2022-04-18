@@ -2,7 +2,11 @@ const About = () => {
   return (
     <div>
       <h2>About Me</h2>
-      <img width="200" alt="Jake Pasternak" src="assets/images/profile.JPG" />
+      <img
+        width="200"
+        alt="Jake Pasternak"
+        src={`${process.env.PUBLIC_URL + "/assets/images/profile.JPG"}`}
+      />
       <p>
         Jake Pasternak was born in San Diego, California, and moved with his
         family to Mililani, Hawaii, at the age of three. His introduction to
