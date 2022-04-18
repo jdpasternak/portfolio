@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const handleClick = (e) => {
+    console.log(e.target.pathname.split("/")[1]);
     setCurrentPage(e.target.pathname.split("/")[1]);
   };
   const [currentPage, setCurrentPage] = useState("about");
@@ -13,12 +14,12 @@ const Navigation = () => {
       <div className="navbar-fixed">
         <nav className="bg-primary">
           <div className="nav-wrapper container">
-            <Link to="/about" className="brand-logo">
+            <Link to="/about" onClick={handleClick} className="brand-logo">
               Jake Pasternak
             </Link>
-            <a href="#" data-target="mobile-menu" className="sidenav-trigger">
+            <Link to="#" data-target="mobile-menu" className="sidenav-trigger">
               <i className="material-icons">menu</i>
-            </a>
+            </Link>
             <ul className="right hide-on-med-and-down">
               <li
                 className={currentPage === "about" ? "active" : ""}
