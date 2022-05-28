@@ -31,6 +31,22 @@ import {
   faWandMagic,
 } from "@fortawesome/free-solid-svg-icons";
 
+export const getYearsAndMonthsTimeLapse = (start, end) => {
+  const lapse =
+    ((end ? end : Date.now()) - (start ? start : Date.now())) / 31536000000;
+  const years = Math.floor(lapse);
+  const months = Math.ceil((lapse % 1) * 12);
+  const string = `${
+    (years > 0 ? years + (years > 1 ? " yrs, " : " yr, ") : "") +
+    (months > 0 ? months + (months > 1 ? " mos" : " mo") : "")
+  }`;
+  return string;
+};
+
+export const getMonthYearStringFromDate = (date) => {
+  return "";
+};
+
 export const resumeData = {
   summary:
     "Confident and charismatic leader with drive and will to grow in a role where his talents, skills, and visions fuel consistent achievement that benefits the company and its people. Experience in desktop/server administration, networking and web development.",
@@ -175,23 +191,36 @@ export const resumeData = {
   ],
   work: [
     {
+      title: "Software Engineer",
+      company: "J. P. Morgan Chase & Co.",
+      companySite: "https://jpmorgan.com/",
+      start: new Date("2022-04-25"),
+      end: "",
+      location: "Tampa, FL",
+    },
+    {
       title: "Owner",
       company: "JDP Enterprises, LLC",
       companySite: "https://jdp-enterprises.com/",
-      duration: "September 2017 - Present (5 yrs 2 mos)",
+      start: new Date("2017-09-01"),
+      end: "",
       location: "Honolulu, HI",
     },
     {
       title: "IT Project Administrator",
       company: "Hawaii Medical Service Association",
       companySite: "https://hmsa.com/",
-      duration: "December 2019 - Present (2 yrs)",
+      start: new Date("2019-04-11"),
+      end: new Date("2021-12-28"),
+      duration: "December 2019 - December 2021 (2 yrs)",
       location: "Honolulu, HI",
     },
     {
       title: "IT Project Coordinator",
       company: "Hawaii Medical Service Association",
       companySite: "https://hmsa.com/",
+      start: new Date("2019-04-11"),
+      end: new Date("2019-12-29"),
       duration: "April 2019 - December 2019 (8 mos)",
       location: "Honolulu, HI",
     },
@@ -199,6 +228,8 @@ export const resumeData = {
       title: "Advanced Repair Agent",
       company: "Geek Squad",
       companySite: "https://geeksquad.com",
+      start: new Date("2017-04-01"),
+      end: new Date("2020-09-31"),
       duration: "April 2017 - September 2020",
       location: "Honolulu, HI",
     },
@@ -206,6 +237,8 @@ export const resumeData = {
       title: "IT Instructor",
       company: "Advanced Computer Technology Training, Inc.",
       companySite: "https://actt-inc.com/",
+      start: new Date("2018-06-01"),
+      end: new Date("2019-01-25"),
       duration: "June 2018 - January 2019 (8 mos)",
       location: "Pearl City, HI",
     },
@@ -213,6 +246,8 @@ export const resumeData = {
       title: "Consultation Agent",
       company: "Geek Squad",
       companySite: "https://geeksquad.com",
+      start: new Date("2017-07-01"),
+      end: new Date("2018-08-31"),
       duration: "July 2017 - August 2018 (1 yr 2 mos)",
       location: "Honolulu, HI",
     },
@@ -220,6 +255,8 @@ export const resumeData = {
       title: "Supply Chain Specialist",
       company: "OneSource Distributors",
       companySite: "https://www.1sourcedist.com/",
+      start: new Date("2015-12-01"),
+      end: new Date("2017-03-31"),
       duration: "December 2015 - March 2017 (1 yr 4 mos)",
       location: "Honolulu, HI",
     },
@@ -227,6 +264,8 @@ export const resumeData = {
       title: "Head of Receiving",
       company: "OneSource Distributors",
       companySite: "https://www.1sourcedist.com/",
+      start: new Date("2015-01-01"),
+      end: new Date("2015-12-31"),
       duration: "January 2015 - December 2015 (1 yr)",
       location: "Honolulu, HI",
     },
