@@ -17,9 +17,12 @@ import {
   AccordionSummary,
   AccordionDetails,
   AccordionActions,
+  Link,
 } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ExpandMore } from "@mui/icons-material";
+
+import { getYearsAndMonthsTimeLapse } from "../../data/resumeData";
 
 const Resume = ({ summary, skills, certifications, education, work }) => {
   return (
@@ -113,22 +116,38 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
           <Typography variant="h4" component="h2">
             Work Experience
           </Typography>
-          <Accordion expanded={true}>
-            <AccordionSummary expandIcon={<ExpandMore />}>
-              <Typography sx={{ width: "33%", flexShrink: 0 }}>
-                Summary
-              </Typography>
-              <Typography>Sub-summary</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>Details</Typography>
-            </AccordionDetails>
-            <AccordionActions>
-              <Button>
-                <Typography>Click here!</Typography>
-              </Button>
-            </AccordionActions>
-          </Accordion>
+          {work.map((w) => (
+            <Accordion expanded={false}>
+              <AccordionSummary expandIcon={<ExpandMore />}>
+                <Typography sx={{ width: "33%", flexShrink: 0 }}>
+                  {w.title}
+                </Typography>
+                <Typography sx={{ color: "text.secondary" }}>
+                  {w.company} • {w.location}
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                  {getYearsAndMonthsTimeLapse(w.start, w.end)}
+                </Typography>
+              </AccordionDetails>
+              <AccordionActions>
+                <Button>
+                  <Typography style={{ textDecoration: "none" }}>
+                    <Link
+                      underline="none"
+                      href={w.companySite}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Company Site
+                    </Link>
+                  </Typography>
+                </Button>
+              </AccordionActions>
+            </Accordion>
+          ))}
+
           <Typography variant="h4" component="h2">
             Education
           </Typography>
