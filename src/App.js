@@ -1,7 +1,6 @@
 import "./App.css";
 import {
   BrowserRouter as Router,
-  Link,
   Navigate,
   Route,
   Routes,
@@ -13,7 +12,7 @@ import Resume from "./components/Resume";
 import { resumeData } from "./data/resumeData";
 import Contact from "./components/Contact";
 import About from "./components/About";
-import { Button, Menu, MenuItem, useMediaQuery } from "@mui/material";
+import { Box, Button, Menu, MenuItem, Link } from "@mui/material";
 import { useState } from "react";
 import { MenuOutlined } from "@mui/icons-material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
@@ -75,16 +74,16 @@ function App() {
               horizontal: "left",
             }}
           >
-            <Link to="/about">
+            <Link to="/about" underline="none">
               <MenuItem>About</MenuItem>
             </Link>
-            <Link to="/projects">
+            <Link to="/projects" underline="none">
               <MenuItem>Projects</MenuItem>
             </Link>
-            <Link to="/resume">
+            <Link to="/resume" underline="none">
               <MenuItem>Resume</MenuItem>
             </Link>
-            <Link to="/contact">
+            <Link to="/contact" underline="none">
               <MenuItem>Contact</MenuItem>
             </Link>
           </Menu>
@@ -109,7 +108,7 @@ function App() {
             </Routes>
           </div>
         </main>
-        <Footer />
+        <Box height={20}></Box>
       </Router>
     </ThemeProvider>
   );
