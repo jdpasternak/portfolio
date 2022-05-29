@@ -160,32 +160,32 @@ export const resumeData = {
   certifications: [
     {
       name: "CompTIA A+",
-      logo: "/portfolio/assets/images/CompTIA_A_2Bce.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/CompTIA_A_2Bce.png`,
       link: "https://www.credly.com/badges/2bcfc959-8c05-461b-a1d3-964aa1d840e3",
     },
     {
       name: "CompTIA Network+",
-      logo: "/portfolio/assets/images/CompTIA_Network_2Bce.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/CompTIA_Network_2Bce.png`,
       link: "https://www.credly.com/badges/be30561e-8421-445f-84d3-d855d98921b5",
     },
     {
       name: "CompTIA Security+",
-      logo: "/portfolio/assets/images/CompTIA_Security_2Bce.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/CompTIA_Security_2Bce.png`,
       link: "https://www.credly.com/badges/9f0c61bf-20f9-40a2-a736-47d69f451c8e",
     },
     {
       name: "CompTIA Pentest+",
-      logo: "portfolio/assets/images/CompTIA_PenTest_2B.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/CompTIA_PenTest_2B.png`,
       link: "https://www.credly.com/badges/748e8690-1543-48fb-84f9-eb1ceeda7022",
     },
     {
       name: "Cisco CCENT",
-      logo: "/portfolio/assets/images/ccent_network_large.jpg",
+      logo: `${process.env.PUBLIC_URL}/assets/images/ccent_network_large.jpg`,
       link: "",
     },
     {
       name: "AWS Cloud Practitioner",
-      logo: "/portfolio/assets/images/aws-cloud-practitioner.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/aws-cloud-practitioner.png`,
       link: "https://www.credly.com/badges/220db854-cc9a-4a91-9d9b-9cd073a5800e",
     },
   ],
