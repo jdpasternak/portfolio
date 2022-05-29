@@ -21,10 +21,16 @@ import {
 } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ExpandMore } from "@mui/icons-material";
-
 import { getYearsAndMonthsTimeLapse } from "../../data/resumeData";
+import { useState } from "react";
 
 const Resume = ({ summary, skills, certifications, education, work }) => {
+  const [expanded, setExpanded] = useState(false);
+  const handleChange = (panel) => (event, isExpanded) => {
+    console.log(panel, isExpanded);
+    setExpanded(isExpanded ? panel : false);
+  };
+
   return (
     <div className="row">
       <div className="col s12 m9 l10">
@@ -117,7 +123,10 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
             Work Experience
           </Typography>
           {work.map((w) => (
-            <Accordion expanded={false}>
+            <Accordion
+              expanded={expanded === w.title}
+              onChange={handleChange(w.title)}
+            >
               <AccordionSummary expandIcon={<ExpandMore />}>
                 <Typography sx={{ width: "33%", flexShrink: 0 }}>
                   {w.title}
