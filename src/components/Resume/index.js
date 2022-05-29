@@ -20,9 +20,15 @@ import {
   Link,
 } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ExpandMore } from "@mui/icons-material";
+import {
+  ExpandMore,
+  FormatItalic,
+  FormatQuote,
+  RequestQuote,
+} from "@mui/icons-material";
 import { getYearsAndMonthsTimeLapse } from "../../data/resumeData";
 import { useState } from "react";
+import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 
 const Resume = ({ summary, skills, certifications, education, work }) => {
   const [expanded, setExpanded] = useState(false);
@@ -54,7 +60,7 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
             {skills.map((skill) => (
               <>
                 <Grid item xs={12} md={4} key={skill.group}>
-                  <Card>
+                  <Card sx={{ maxHeight: 200, height: "100%" }}>
                     <CardContent>
                       <Divider key={skill.group} textAlign="left">
                         <Chip label={skill.group} />
@@ -156,10 +162,52 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
               </AccordionActions>
             </Accordion>
           ))}
-
           <Typography variant="h4" component="h2">
             Education
           </Typography>
+          {education.map((e) => (
+            <Accordion
+              open={expanded === e.degree + e.study}
+              onChange={handleChange(e.degree + e.study)}
+            >
+              <AccordionSummary expandIcon={<ExpandMore />}>
+                <Typography
+                  sx={{ width: { xs: "100%", md: "33%" }, flexShrink: 0 }}
+                >
+                  <Typography component="div" sx={{ fontStyle: "italic" }}>
+                    {e.degree}
+                  </Typography>
+                  <Typography component="span">&nbsp;in&nbsp;</Typography>
+                  <Typography component="span" sx={{ fontWeight: 700 }}>
+                    {e.study}
+                  </Typography>
+                </Typography>
+                <Typography
+                  sx={{ color: "text.secondary" }}
+                  display={{ xs: "none", md: "block" }}
+                >
+                  {e.school} • {e.graduation} • {e.location}
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography display={{ xs: "block", md: "none" }}>
+                  Completed in {e.graduation} at {e.school}.
+                </Typography>
+                <Typography variant="figure" component="figure">
+                  <Typography>
+                    <FontAwesomeIcon icon={faQuoteLeft} />
+                    &nbsp;{e.description}&nbsp;
+                    <FontAwesomeIcon icon={faQuoteRight} />
+                  </Typography>
+                </Typography>
+              </AccordionDetails>
+              <AccordionActions>
+                <Link href={e.degreeLink} underline="none">
+                  <Button>{e.school}</Button>
+                </Link>
+              </AccordionActions>
+            </Accordion>
+          ))}
         </Container>
       </div>
     </div>
