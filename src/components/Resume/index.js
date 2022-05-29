@@ -39,13 +39,13 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
           <Typography variant="h4" component="h2">
             Summary
           </Typography>
-          <Typography variant="p" component="p">
+          <Typography variant="p" component="p" mb={3}>
             {summary}
           </Typography>
-          <Typography variant="h4" component="h2" mt={3}>
+          <Typography variant="h4" component="h2" mb={1}>
             Skills and Technologies
           </Typography>
-          <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={1}>
+          <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={1} mb={3}>
             {skills.map((skill) => (
               <Card sx={{ width: "100%" }} key={skill.group}>
                 <CardContent>
@@ -66,10 +66,10 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
               </Card>
             ))}
           </Masonry>
-          <Typography variant="h4" component="h2" mt={3}>
+          <Typography variant="h4" component="h2" mb={1}>
             Certifications
           </Typography>
-          <Grid container spacing={2} justifyContent="center">
+          <Grid container spacing={2} justifyContent="center" mb={3}>
             {certifications.map((certification) => (
               <Grid item key={certification.name} xs={6} sm={4} md={3} lg={2}>
                 <Card sx={{ maxWidth: 200, height: "100%" }}>
@@ -104,15 +104,16 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
               </Grid>
             ))}
           </Grid>
-          <Typography variant="h4" component="h2">
+          <Typography variant="h4" component="h2" mb={1}>
             Work Experience
           </Typography>
-          {work.map((w) => (
+          {work.map((w, i) => (
             <Accordion
               expanded={expanded === w.title}
               onChange={handleChange(w.title)}
               key={w.title}
             >
+              {console.log(i === work.length - 1)}
               <AccordionSummary expandIcon={<ExpandMore />}>
                 <Typography
                   sx={{ width: { xs: "100%", md: "33%" }, flexShrink: 0 }}
@@ -156,7 +157,7 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
               </AccordionActions>
             </Accordion>
           ))}
-          <Typography variant="h4" component="h2">
+          <Typography variant="h4" component="h2" mt={3} mb={1}>
             Education
           </Typography>
           {education.map((e) => (
