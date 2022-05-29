@@ -18,15 +18,12 @@ import {
   AccordionDetails,
   AccordionActions,
   Link,
-  ImageList,
-  ImageListItem,
 } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ExpandMore } from "@mui/icons-material";
 import { getYearsAndMonthsTimeLapse } from "../../data/resumeData";
 import { useState } from "react";
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
-import { FixedSizeList } from "react-window";
 import { Masonry } from "@mui/lab";
 
 const Resume = ({ summary, skills, certifications, education, work }) => {
@@ -48,38 +45,26 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
           <Typography variant="h4" component="h2" mt={3}>
             Skills and Technologies
           </Typography>
-          {/* <Grid>  */}
-          {/* container
-            direction="row"
-            alignItems="stretch"
-            justifyContent="center"
-            spacing={2}
-          > */}
           <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={1}>
             {skills.map((skill) => (
-              <>
-                {/* <Grid item xs={12} md={4} key={skill.group}> */}
-                <Card sx={{ width: "100%" }}>
-                  <CardContent>
-                    <Divider key={skill.group} textAlign="left">
-                      <Chip label={skill.group} />
-                    </Divider>
-                    <List>
-                      {skill.skillsList.map((item) => (
-                        <ListItem key={item.name}>
-                          <ListItemIcon>
-                            <FontAwesomeIcon icon={item.icon} />
-                          </ListItemIcon>
-                          <ListItemText primary={item.name} />
-                        </ListItem>
-                      ))}
-                    </List>
-                  </CardContent>
-                </Card>
-                {/* </Grid> */}
-              </>
+              <Card sx={{ width: "100%" }} key={skill.group}>
+                <CardContent>
+                  <Divider key={skill.group} textAlign="left">
+                    <Chip label={skill.group} />
+                  </Divider>
+                  <List>
+                    {skill.skillsList.map((item) => (
+                      <ListItem key={item.name}>
+                        <ListItemIcon>
+                          <FontAwesomeIcon icon={item.icon} />
+                        </ListItemIcon>
+                        <ListItemText primary={item.name} />
+                      </ListItem>
+                    ))}
+                  </List>
+                </CardContent>
+              </Card>
             ))}
-            {/* </Grid> */}
           </Masonry>
           <Typography variant="h4" component="h2" mt={3}>
             Certifications
@@ -132,6 +117,7 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
             <Accordion
               expanded={expanded === w.title}
               onChange={handleChange(w.title)}
+              key={w.title}
             >
               <AccordionSummary expandIcon={<ExpandMore />}>
                 <Typography
@@ -162,7 +148,7 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
               </AccordionDetails>
               <AccordionActions>
                 <Button>
-                  <Typography style={{ textDecoration: "none" }}>
+                  <Typography>
                     <Link
                       underline="none"
                       href={w.companySite}
@@ -183,10 +169,12 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
             <Accordion
               expanded={expanded === e.degree + e.study}
               onChange={handleChange(e.degree + e.study)}
+              key={e.degree + e.study}
             >
               <AccordionSummary expandIcon={<ExpandMore />}>
                 <Typography
                   sx={{ width: { xs: "100%", md: "33%" }, flexShrink: 0 }}
+                  variant="div"
                 >
                   <Typography display={"block"} sx={{ fontStyle: "italic" }}>
                     {e.degree}
@@ -207,12 +195,10 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
                 <Typography display={{ xs: "block", md: "none" }}>
                   Completed in {e.graduation} at {e.school}.
                 </Typography>
-                <Typography variant="figure" component="figure">
-                  <Typography>
-                    <FontAwesomeIcon icon={faQuoteLeft} />
-                    &nbsp;{e.description}&nbsp;
-                    <FontAwesomeIcon icon={faQuoteRight} />
-                  </Typography>
+                <Typography>
+                  <FontAwesomeIcon icon={faQuoteLeft} />
+                  &nbsp;{e.description}&nbsp;
+                  <FontAwesomeIcon icon={faQuoteRight} />
                 </Typography>
               </AccordionDetails>
               <AccordionActions>
