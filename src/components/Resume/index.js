@@ -69,15 +69,9 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
           <Typography variant="h4" component="h2" mt={3}>
             Certifications
           </Typography>
-          <Grid
-            container
-            spacing={2}
-            flexDirection="row"
-            justifyContent="center"
-            alignItems="stretch"
-          >
+          <Grid container spacing={2} justifyContent="center">
             {certifications.map((certification) => (
-              <Grid item key={certification.name} xs={6} sm={4} md={3}>
+              <Grid item key={certification.name} xs={6} sm={4} md={3} lg={2}>
                 <Card sx={{ maxWidth: 200, height: "100%" }}>
                   <CardMedia
                     component="img"
