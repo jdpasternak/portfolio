@@ -18,22 +18,20 @@ import {
   AccordionDetails,
   AccordionActions,
   Link,
+  ImageList,
+  ImageListItem,
 } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  ExpandMore,
-  FormatItalic,
-  FormatQuote,
-  RequestQuote,
-} from "@mui/icons-material";
+import { ExpandMore } from "@mui/icons-material";
 import { getYearsAndMonthsTimeLapse } from "../../data/resumeData";
 import { useState } from "react";
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
+import { FixedSizeList } from "react-window";
+import { Masonry } from "@mui/lab";
 
 const Resume = ({ summary, skills, certifications, education, work }) => {
   const [expanded, setExpanded] = useState(false);
   const handleChange = (panel) => (event, isExpanded) => {
-    console.log(panel, isExpanded);
     setExpanded(isExpanded ? panel : false);
   };
 
@@ -50,37 +48,39 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
           <Typography variant="h4" component="h2" mt={3}>
             Skills and Technologies
           </Typography>
-          <Grid
-            container
+          {/* <Grid>  */}
+          {/* container
             direction="row"
             alignItems="stretch"
             justifyContent="center"
             spacing={2}
-          >
+          > */}
+          <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={1}>
             {skills.map((skill) => (
               <>
-                <Grid item xs={12} md={4} key={skill.group}>
-                  <Card sx={{ maxHeight: 200, height: "100%" }}>
-                    <CardContent>
-                      <Divider key={skill.group} textAlign="left">
-                        <Chip label={skill.group} />
-                      </Divider>
-                      <List>
-                        {skill.skillsList.map((item) => (
-                          <ListItem key={item.name}>
-                            <ListItemIcon>
-                              <FontAwesomeIcon icon={item.icon} />
-                            </ListItemIcon>
-                            <ListItemText primary={item.name} />
-                          </ListItem>
-                        ))}
-                      </List>
-                    </CardContent>
-                  </Card>
-                </Grid>
+                {/* <Grid item xs={12} md={4} key={skill.group}> */}
+                <Card sx={{ width: "100%" }}>
+                  <CardContent>
+                    <Divider key={skill.group} textAlign="left">
+                      <Chip label={skill.group} />
+                    </Divider>
+                    <List>
+                      {skill.skillsList.map((item) => (
+                        <ListItem key={item.name}>
+                          <ListItemIcon>
+                            <FontAwesomeIcon icon={item.icon} />
+                          </ListItemIcon>
+                          <ListItemText primary={item.name} />
+                        </ListItem>
+                      ))}
+                    </List>
+                  </CardContent>
+                </Card>
+                {/* </Grid> */}
               </>
             ))}
-          </Grid>
+            {/* </Grid> */}
+          </Masonry>
           <Typography variant="h4" component="h2" mt={3}>
             Certifications
           </Typography>
@@ -134,14 +134,28 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
               onChange={handleChange(w.title)}
             >
               <AccordionSummary expandIcon={<ExpandMore />}>
-                <Typography sx={{ width: "33%", flexShrink: 0 }}>
+                <Typography
+                  sx={{ width: { xs: "100%", md: "33%" }, flexShrink: 0 }}
+                >
                   {w.title}
                 </Typography>
-                <Typography sx={{ color: "text.secondary" }}>
+                <Typography
+                  sx={{
+                    color: "text.secondary",
+                    display: { xs: "none", md: "block" },
+                  }}
+                >
                   {w.company} • {w.location}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
+                <Typography
+                  sx={{
+                    display: { xs: "block", md: "none" },
+                  }}
+                >
+                  {w.company} • {w.location}
+                </Typography>
                 <Typography>
                   {getYearsAndMonthsTimeLapse(w.start, w.end)}
                 </Typography>
@@ -167,14 +181,14 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
           </Typography>
           {education.map((e) => (
             <Accordion
-              open={expanded === e.degree + e.study}
+              expanded={expanded === e.degree + e.study}
               onChange={handleChange(e.degree + e.study)}
             >
               <AccordionSummary expandIcon={<ExpandMore />}>
                 <Typography
                   sx={{ width: { xs: "100%", md: "33%" }, flexShrink: 0 }}
                 >
-                  <Typography component="div" sx={{ fontStyle: "italic" }}>
+                  <Typography display={"block"} sx={{ fontStyle: "italic" }}>
                     {e.degree}
                   </Typography>
                   <Typography component="span">&nbsp;in&nbsp;</Typography>
