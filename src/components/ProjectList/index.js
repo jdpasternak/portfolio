@@ -35,22 +35,28 @@ const Image = ({ project }) => {
 };
 
 const ProjectList = () => {
-  const [projects, setProjects] = useState();
-
-  // const { src } = useImage({
-  //   srcList: [
-  //     `https://github.com/${project.owner.login}/${project.name}/raw/${project.default_branch}/assets/images/screenshot.PNG`,
-  //     `${process.env.PUBLIC_URL}/assets/images/image-coming-soon.jpg`,
-  //   ],
-  // });
+  const [displayedProjects, setDisplayedProjects] = useState([]);
+  const [allProjects, setAllProjects] = useState([]);
 
   useEffect(() => {
     fetch(
       "https://api.github.com/users/jdpasternak/repos?sort=updated&per_page=100"
     )
       .then((response) => response.json())
-      .then((data) => setProjects(data));
+      .then((data) => {
+        setAllProjects(data);
+        setDisplayedProjects(data);
+      });
   }, []);
+
+  const filterProjects = (e) => {
+    console.log(e);
+    setDisplayedProjects(
+      allProjects.filter(
+        (project) => project.language === e.target.dataset.value
+      )
+    );
+  };
 
   const langToIcon = {
     Java: faJava,
@@ -64,16 +70,25 @@ const ProjectList = () => {
     <Container>
       <Box sx={{ mb: 2 }}>
         <ButtonGroup variant="contained">
-          <Button>All Projects</Button>
-          {projects &&
+          <Button onClick={() => setDisplayedProjects(allProjects)}>
+            All Projects
+          </Button>
+          {allProjects &&
             Array.from(
-              new Set(projects.map((project) => project.language))
-            ).map((l) => l && <Button key={l}>{l} Projects</Button>)}
+              new Set(allProjects.map((project) => project.language))
+            ).map(
+              (l) =>
+                l && (
+                  <Button key={l} data-value={l} onClick={filterProjects}>
+                    {l} Projects
+                  </Button>
+                )
+            )}
         </ButtonGroup>
       </Box>
       <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4 }}>
-        {projects &&
-          projects
+        {displayedProjects &&
+          displayedProjects
             .filter((project) => !project.fork)
             .map((project) => (
               <Card key={project.name}>
