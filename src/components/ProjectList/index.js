@@ -9,6 +9,8 @@ import {
   Button,
   Container,
   ButtonGroup,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { formatName } from "../../helpers";
@@ -23,6 +25,7 @@ import {
   faPython,
 } from "@fortawesome/free-brands-svg-icons";
 import { Box } from "@mui/system";
+import { Filter, FilterAlt } from "@mui/icons-material";
 
 const Image = ({ project }) => {
   const { src } = useImage({
@@ -37,6 +40,14 @@ const Image = ({ project }) => {
 const ProjectList = () => {
   const [displayedProjects, setDisplayedProjects] = useState([]);
   const [allProjects, setAllProjects] = useState([]);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const handleOpenFilterMenu = (e) => {
+    setAnchorEl(e.currentTarget);
+  };
+  const handleCloseFilterMenu = (e) => {
+    setAnchorEl(null);
+  };
+  const open = Boolean(anchorEl);
 
   useEffect(() => {
     fetch(
@@ -50,7 +61,6 @@ const ProjectList = () => {
   }, []);
 
   const filterProjects = (e) => {
-    console.log(e);
     setDisplayedProjects(
       allProjects.filter(
         (project) => project.language === e.target.dataset.value
@@ -68,7 +78,7 @@ const ProjectList = () => {
 
   return (
     <Container>
-      <Box sx={{ mb: 2 }}>
+      <Box sx={{ mb: 2, display: { xs: "none", md: "block" } }}>
         <ButtonGroup variant="contained">
           <Button onClick={() => setDisplayedProjects(allProjects)}>
             All Projects
@@ -86,6 +96,40 @@ const ProjectList = () => {
             )}
         </ButtonGroup>
       </Box>
+      <Button
+        sx={{ display: { xs: "block", md: "none" } }}
+        onClick={handleOpenFilterMenu}
+      >
+        <FilterAlt />
+      </Button>
+      <Menu anchorEl={anchorEl} open={open}>
+        <MenuItem
+          onClick={(e) => {
+            setDisplayedProjects(allProjects);
+            handleCloseFilterMenu();
+          }}
+        >
+          All Projects
+        </MenuItem>
+        {allProjects &&
+          Array.from(
+            new Set(allProjects.map((project) => project.language))
+          ).map(
+            (l) =>
+              l && (
+                <MenuItem
+                  key={l}
+                  data-value={l}
+                  onClick={(e) => {
+                    handleCloseFilterMenu();
+                    filterProjects(e);
+                  }}
+                >
+                  {l} Projects
+                </MenuItem>
+              )
+          )}
+      </Menu>
       <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4 }}>
         {displayedProjects &&
           displayedProjects
