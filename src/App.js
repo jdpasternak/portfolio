@@ -73,18 +73,20 @@ function App() {
             horizontal: "left",
           }}
         >
-          <Link to="/about" onClick={handleClose}>
-            <MenuItem>About</MenuItem>
-          </Link>
-          <Link to="/projects" onClick={handleClose}>
-            <MenuItem>Projects</MenuItem>
-          </Link>
-          <Link to="/resume" onClick={handleClose}>
-            <MenuItem>Resume</MenuItem>
-          </Link>
-          <Link to="/contact" onClick={handleClose}>
-            <MenuItem>Contact</MenuItem>
-          </Link>
+          {[
+            { text: "About", path: "/about" },
+            { text: "Projects", path: "/projects" },
+            { text: "Resume", path: "/resume" },
+            { text: "Contact", path: "/contact" },
+          ].map((item) => (
+            <Link
+              to={item.path}
+              onClick={handleClose}
+              style={{ textDecoration: "none" }}
+            >
+              <MenuItem>{item.text}</MenuItem>
+            </Link>
+          ))}
         </Menu>
       </header>
 
