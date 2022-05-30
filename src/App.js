@@ -4,35 +4,77 @@ import {
   Navigate,
   Route,
   Routes,
+  Link,
 } from "react-router-dom";
-
-import Header from "./components/Header";
-import Navigation from "./components/Navigation";
-import Footer from "./components/Footer";
-import ProjectList from "./components/ProjectList";
+import Projects from "./components/Projects";
 import Resume from "./components/Resume";
-
-import resumeData from "./data/resumeData.json";
+import { resumeData } from "./data/resumeData";
 import Contact from "./components/Contact";
 import About from "./components/About";
-// import { useEffect } from "react";
-// import M from "materialize-css";
+import { Button, Menu, MenuItem } from "@mui/material";
+import { useState } from "react";
+import { MenuOutlined } from "@mui/icons-material";
 
 function App() {
-  // useEffect(() => {
-  //   M.AutoInit();
-  // }, []);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <Router>
-      <Header>
-        <Navigation />
-      </Header>
+      <header>
+        <Button
+          id="menu-button"
+          aria-controls={open ? "menu" : undefined}
+          arial-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+          onClick={handleClick}
+        >
+          <MenuOutlined />
+        </Button>
+        <Menu
+          id="menu"
+          aria-labelledby="menu-button"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+        >
+          {[
+            { text: "About", path: "/about" },
+            { text: "Projects", path: "/projects" },
+            { text: "Resume", path: "/resume" },
+            { text: "Contact", path: "/contact" },
+          ].map((item) => (
+            <Link
+              to={item.path}
+              onClick={handleClose}
+              style={{ textDecoration: "none" }}
+              key={item.text}
+            >
+              <MenuItem>{item.text}</MenuItem>
+            </Link>
+          ))}
+        </Menu>
+      </header>
+
       <main className="container">
         <div className="row">
           <Routes>
             <Route exact path="/about" element={<About />} />
-            <Route exact path="/projects" element={<ProjectList />} />
+            <Route exact path="/projects" element={<Projects />} />
             <Route exact path="/resume" element={<Resume {...resumeData} />} />
             <Route exact path="/contact" element={<Contact />} />
             <Route
@@ -43,7 +85,6 @@ function App() {
           </Routes>
         </div>
       </main>
-      <Footer />
     </Router>
   );
 }
