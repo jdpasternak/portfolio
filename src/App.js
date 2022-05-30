@@ -83,6 +83,7 @@ function App() {
               to={item.path}
               onClick={handleClose}
               style={{ textDecoration: "none" }}
+              key={item.text}
             >
               <MenuItem>{item.text}</MenuItem>
             </Link>

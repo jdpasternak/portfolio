@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const handleClick = (e) => {
-    console.log(e.target.pathname.split("/")[1]);
     setCurrentPage(e.target.pathname.split("/")[1]);
   };
   const [currentPage, setCurrentPage] = useState("about");

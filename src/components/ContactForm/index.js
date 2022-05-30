@@ -26,12 +26,10 @@ const ContactForm = () => {
       ...contactFormState,
       [e.target.name]: e.target.value,
     });
-    console.log(contactFormState);
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(contactFormState);
   };
 
   return (
