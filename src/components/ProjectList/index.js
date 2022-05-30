@@ -160,6 +160,11 @@ const ProjectList = () => {
                     <FontAwesomeIcon icon={langToIcon[project.language]} />{" "}
                     {formatName(project.name)}
                   </Typography>
+                  <Typography>
+                    {project.description
+                      ? project.description
+                      : `A super cool ${project.language} project!`}
+                  </Typography>
                 </CardContent>
                 <CardActions>
                   {project.homepage ? (
