@@ -6,15 +6,14 @@ import {
   Routes,
   Link,
 } from "react-router-dom";
-import ProjectList from "./components/ProjectList";
+import Projects from "./components/Projects";
 import Resume from "./components/Resume";
 import { resumeData } from "./data/resumeData";
 import Contact from "./components/Contact";
 import About from "./components/About";
-import { Box, Button, Menu, MenuItem, Paper } from "@mui/material";
+import { Button, Menu, MenuItem } from "@mui/material";
 import { useState } from "react";
 import { MenuOutlined } from "@mui/icons-material";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 function App() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -26,27 +25,7 @@ function App() {
     setAnchorEl(null);
   };
 
-  const darkTheme = createTheme({
-    palette: {
-      mode: "dark",
-    },
-  });
-
-  const lightTheme = createTheme({
-    palette: {
-      mode: "light",
-    },
-  });
-
   return (
-    // <ThemeProvider
-    //   theme={
-    //     window.matchMedia &&
-    //     window.matchMedia("(prefers-color-scheme: dark)").matches
-    //       ? darkTheme
-    //       : lightTheme
-    //   }
-    // >
     <Router>
       <header>
         <Button
@@ -95,7 +74,7 @@ function App() {
         <div className="row">
           <Routes>
             <Route exact path="/about" element={<About />} />
-            <Route exact path="/projects" element={<ProjectList />} />
+            <Route exact path="/projects" element={<Projects />} />
             <Route exact path="/resume" element={<Resume {...resumeData} />} />
             <Route exact path="/contact" element={<Contact />} />
             <Route
@@ -107,7 +86,6 @@ function App() {
         </div>
       </main>
     </Router>
-    // </ThemeProvider>
   );
 }
 
