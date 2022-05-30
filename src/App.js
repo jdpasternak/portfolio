@@ -39,76 +39,72 @@ function App() {
   });
 
   return (
-    <ThemeProvider
-      theme={
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? darkTheme
-          : lightTheme
-      }
-    >
-      <Router>
-        <header>
-          <Button
-            id="menu-button"
-            aria-controls={open ? "menu" : undefined}
-            arial-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-          >
-            <MenuOutlined />
-          </Button>
-          <Menu
-            id="menu"
-            aria-labelledby="menu-button"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
-          >
-            <Link to="/about">
-              <MenuItem>About</MenuItem>
-            </Link>
-            <Link to="/projects">
-              <MenuItem>Projects</MenuItem>
-            </Link>
-            <Link to="/resume">
-              <MenuItem>Resume</MenuItem>
-            </Link>
-            <Link to="/contact">
-              <MenuItem>Contact</MenuItem>
-            </Link>
-          </Menu>
-        </header>
+    // <ThemeProvider
+    //   theme={
+    //     window.matchMedia &&
+    //     window.matchMedia("(prefers-color-scheme: dark)").matches
+    //       ? darkTheme
+    //       : lightTheme
+    //   }
+    // >
+    <Router>
+      <header>
+        <Button
+          id="menu-button"
+          aria-controls={open ? "menu" : undefined}
+          arial-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+          onClick={handleClick}
+        >
+          <MenuOutlined />
+        </Button>
+        <Menu
+          id="menu"
+          aria-labelledby="menu-button"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+        >
+          <Link to="/about">
+            <MenuItem>About</MenuItem>
+          </Link>
+          <Link to="/projects">
+            <MenuItem>Projects</MenuItem>
+          </Link>
+          <Link to="/resume">
+            <MenuItem>Resume</MenuItem>
+          </Link>
+          <Link to="/contact">
+            <MenuItem>Contact</MenuItem>
+          </Link>
+        </Menu>
+      </header>
 
-        <main className="container">
-          <div className="row">
-            <Routes>
-              <Route exact path="/about" element={<About />} />
-              <Route exact path="/projects" element={<ProjectList />} />
-              <Route
-                exact
-                path="/resume"
-                element={<Resume {...resumeData} />}
-              />
-              <Route exact path="/contact" element={<Contact />} />
-              <Route
-                exact
-                path="*"
-                element={<Navigate to="/about" replace index />}
-              />
-            </Routes>
-          </div>
-        </main>
-      </Router>
-    </ThemeProvider>
+      <main className="container">
+        <div className="row">
+          <Routes>
+            <Route exact path="/about" element={<About />} />
+            <Route exact path="/projects" element={<ProjectList />} />
+            <Route exact path="/resume" element={<Resume {...resumeData} />} />
+            <Route exact path="/contact" element={<Contact />} />
+            <Route
+              exact
+              path="*"
+              element={<Navigate to="/about" replace index />}
+            />
+          </Routes>
+        </div>
+      </main>
+    </Router>
+    // </ThemeProvider>
   );
 }
 
