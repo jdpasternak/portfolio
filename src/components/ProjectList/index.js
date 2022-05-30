@@ -1,4 +1,4 @@
-import { Masonry } from "@mui/lab";
+import { LoadingButton, Masonry } from "@mui/lab";
 import {
   Typography,
   Card,
@@ -12,6 +12,8 @@ import {
   Menu,
   MenuItem,
   IconButton,
+  CircularProgress,
+  Backdrop,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { formatName } from "../../helpers";
@@ -131,6 +133,9 @@ const ProjectList = () => {
               )
           )}
       </Menu>
+      <Backdrop open={!(displayedProjects.length > 0)}>
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4 }}>
         {displayedProjects &&
           displayedProjects
