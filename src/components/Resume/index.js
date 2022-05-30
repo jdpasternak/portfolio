@@ -17,10 +17,12 @@ import {
   AccordionSummary,
   AccordionDetails,
   AccordionActions,
+  IconButton,
+  Tooltip,
   Link,
 } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ExpandMore } from "@mui/icons-material";
+import { Download, ExpandMore } from "@mui/icons-material";
 import { getYearsAndMonthsTimeLapse } from "../../data/resumeData";
 import { useState } from "react";
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
@@ -38,6 +40,17 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
         <Container>
           <Typography variant="h4" component="h2">
             Summary
+            <Tooltip title="Download PDF" placement="right">
+              <Link
+                href={`${process.env.PUBLIC_URL}/assets/Jake%20Pasternak.pdf`}
+                target="_blank"
+                download
+              >
+                <IconButton>
+                  <Download />
+                </IconButton>
+              </Link>
+            </Tooltip>
           </Typography>
           <Typography variant="p" component="p" mb={3}>
             {summary}
@@ -113,7 +126,6 @@ const Resume = ({ summary, skills, certifications, education, work }) => {
               onChange={handleChange(w.title)}
               key={w.title}
             >
-              {console.log(i === work.length - 1)}
               <AccordionSummary expandIcon={<ExpandMore />}>
                 <Typography
                   sx={{ width: { xs: "100%", md: "33%" }, flexShrink: 0 }}
