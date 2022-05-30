@@ -73,16 +73,16 @@ function App() {
             horizontal: "left",
           }}
         >
-          <Link to="/about">
+          <Link to="/about" onClick={handleClose}>
             <MenuItem>About</MenuItem>
           </Link>
-          <Link to="/projects">
+          <Link to="/projects" onClick={handleClose}>
             <MenuItem>Projects</MenuItem>
           </Link>
-          <Link to="/resume">
+          <Link to="/resume" onClick={handleClose}>
             <MenuItem>Resume</MenuItem>
           </Link>
-          <Link to="/contact">
+          <Link to="/contact" onClick={handleClose}>
             <MenuItem>Contact</MenuItem>
           </Link>
         </Menu>
