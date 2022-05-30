@@ -8,6 +8,7 @@ import {
   Link,
   Button,
   Container,
+  ButtonGroup,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { formatName } from "../../helpers";
@@ -21,6 +22,7 @@ import {
   faJs,
   faPython,
 } from "@fortawesome/free-brands-svg-icons";
+import { Box } from "@mui/system";
 
 const Image = ({ project }) => {
   const { src } = useImage({
@@ -60,6 +62,15 @@ const ProjectList = () => {
 
   return (
     <Container>
+      <Box sx={{ mb: 2 }}>
+        <ButtonGroup variant="contained">
+          <Button>All Projects</Button>
+          {projects &&
+            Array.from(
+              new Set(projects.map((project) => project.language))
+            ).map((l) => l && <Button key={l}>{l} Projects</Button>)}
+        </ButtonGroup>
+      </Box>
       <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4 }}>
         {projects &&
           projects
