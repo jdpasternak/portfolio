@@ -13,7 +13,7 @@ const About = () => {
           component="img"
           sx={{ width: 200, borderRadius: "5%" }}
           alt="Jake Pasternak"
-          src={`${process.env.PUBLIC_URL + "/assets/images/profile.JPG"}`}
+          src={`${process.env.PUBLIC_URL + "/assets/images/profile.jpg"}`}
         />
         <Typography textAlign="justify" mb={3} mt={3}>
           Jake Pasternak's introduction to computers and technology started at
