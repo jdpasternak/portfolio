@@ -11,6 +11,7 @@ import {
   ButtonGroup,
   Menu,
   MenuItem,
+  IconButton,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { formatName } from "../../helpers";
@@ -102,9 +103,9 @@ const ProjectList = () => {
       >
         <FilterAlt />
       </Button>
-      <Menu anchorEl={anchorEl} open={open}>
+      <Menu anchorEl={anchorEl} open={open} onClose={handleCloseFilterMenu}>
         <MenuItem
-          onClick={(e) => {
+          onClick={() => {
             setDisplayedProjects(allProjects);
             handleCloseFilterMenu();
           }}
