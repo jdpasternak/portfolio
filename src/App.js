@@ -1,6 +1,5 @@
-import "./App.css";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Navigate,
   Route,
   Routes,
@@ -26,7 +25,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <>
       <header>
         <Button
           id="menu-button"
@@ -73,10 +72,10 @@ function App() {
       <main className="container">
         <div className="row">
           <Routes>
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/projects" element={<Projects />} />
-            <Route exact path="/resume" element={<Resume {...resumeData} />} />
-            <Route exact path="/contact" element={<Contact />} />
+            <Route exact path="about" element={<About />} />
+            <Route exact path="projects" element={<Projects />} />
+            <Route exact path="resume" element={<Resume {...resumeData} />} />
+            <Route exact path="contact" element={<Contact />} />
             <Route
               exact
               path="*"
@@ -85,7 +84,7 @@ function App() {
           </Routes>
         </div>
       </main>
-    </Router>
+    </>
   );
 }
 
