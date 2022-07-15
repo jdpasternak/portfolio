@@ -1,10 +1,4 @@
-import {
-  HashRouter as Router,
-  Navigate,
-  Route,
-  Routes,
-  Link,
-} from "react-router-dom";
+import { Navigate, Route, Routes, Link } from "react-router-dom";
 import Projects from "./components/Projects";
 import Resume from "./components/Resume";
 import { resumeData } from "./data/resumeData";
