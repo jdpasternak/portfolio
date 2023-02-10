@@ -4,7 +4,7 @@ import { IconButton, Link, Tooltip, Typography } from "@mui/material";
 const Summary = ({ summary }) => {
   return (
     <>
-      <Typography variant="h4" component="h2">
+      <Typography variant="h4" component="h2" id="summary">
         Summary
         <Tooltip title="Download PDF" placement="right">
           <Link

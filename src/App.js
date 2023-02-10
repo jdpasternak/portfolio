@@ -26,6 +26,7 @@ function App() {
           aria-controls={open ? "menu" : undefined}
           arial-haspopup="true"
           aria-expanded={open ? "true" : undefined}
+          aria-label="menu"
           onClick={handleClick}
         >
           <MenuOutlined />

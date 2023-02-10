@@ -11,7 +11,7 @@ import {
 const Certifications = ({ certifications }) => {
   return (
     <>
-      <Typography variant="h4" component="h2" mb={1}>
+      <Typography variant="h4" component="h2" mb={1} id="certifications">
         Certifications
       </Typography>
       <Grid container spacing={2} justifyContent="center">

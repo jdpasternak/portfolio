@@ -11,3 +11,5 @@ root.render(
     </HashRouter>
   </React.StrictMode>
 );
+
+console.log(process.memoryUsage());
