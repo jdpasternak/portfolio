@@ -1,19 +1,14 @@
-import "./App.css";
-import {
-  BrowserRouter as Router,
-  Navigate,
-  Route,
-  Routes,
-  Link,
-} from "react-router-dom";
+import { Navigate, Route, Routes, Link } from "react-router-dom";
 import Projects from "./components/Projects";
 import Resume from "./components/Resume";
 import { resumeData } from "./data/resumeData";
 import Contact from "./components/Contact";
 import About from "./components/About";
-import { Button, Menu, MenuItem } from "@mui/material";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import { useState } from "react";
-import { MenuOutlined } from "@mui/icons-material";
+import MenuOutlined from "@mui/icons-material/MenuOutlined";
 
 function App() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -26,13 +21,14 @@ function App() {
   };
 
   return (
-    <Router>
+    <>
       <header>
         <Button
           id="menu-button"
           aria-controls={open ? "menu" : undefined}
           arial-haspopup="true"
           aria-expanded={open ? "true" : undefined}
+          aria-label="menu"
           onClick={handleClick}
         >
           <MenuOutlined />
@@ -73,10 +69,10 @@ function App() {
       <main className="container">
         <div className="row">
           <Routes>
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/projects" element={<Projects />} />
-            <Route exact path="/resume" element={<Resume {...resumeData} />} />
-            <Route exact path="/contact" element={<Contact />} />
+            <Route exact path="about" element={<About />} />
+            <Route exact path="projects" element={<Projects />} />
+            <Route exact path="resume" element={<Resume {...resumeData} />} />
+            <Route exact path="contact" element={<Contact />} />
             <Route
               exact
               path="*"
@@ -85,7 +81,7 @@ function App() {
           </Routes>
         </div>
       </main>
-    </Router>
+    </>
   );
 }
 
