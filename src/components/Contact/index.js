@@ -1,17 +1,17 @@
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
+import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Celebration } from "@mui/icons-material";
-import {
-  Card,
-  CardContent,
-  Grid,
-  IconButton,
-  Link,
-  Tooltip,
-  Typography,
-} from "@mui/material";
-import { Container } from "@mui/system";
+import Celebration from "@mui/icons-material/Celebration";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Grid from "@mui/material/Grid";
+import IconButton from "@mui/material/IconButton";
+import Link from "@mui/material/Link";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/system/Container";
 import { useState } from "react";
 
 const Contact = () => {

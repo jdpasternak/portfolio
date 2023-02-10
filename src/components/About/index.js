@@ -1,5 +1,7 @@
-import { Box, Container, Typography } from "@mui/material";
-import { Masonry } from "@mui/lab";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Masonry from "@mui/lab/Masonry";
 import LinkButton from "./LinkButton";
 
 const About = () => {

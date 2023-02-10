@@ -1,5 +1,8 @@
-import { Download } from "@mui/icons-material";
-import { IconButton, Link, Tooltip, Typography } from "@mui/material";
+import Download from "@mui/icons-material/Download";
+import IconButton from "@mui/material/IconButton";
+import Link from "@mui/material/Link";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
 
 const Summary = ({ summary }) => {
   return (

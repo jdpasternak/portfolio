@@ -1,31 +1,27 @@
-import { Masonry } from "@mui/lab";
-import {
-  Typography,
-  Card,
-  CardContent,
-  CardActions,
-  Link,
-  Button,
-  Container,
-  ButtonGroup,
-  Menu,
-  MenuItem,
-  CircularProgress,
-  Backdrop,
-} from "@mui/material";
+import Masonry from "@mui/lab/Masonry";
+import Typography from "@mui/material/Typography";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import Link from "@mui/material/Link";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import ButtonGroup from "@mui/material/ButtonGroup";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import CircularProgress from "@mui/material/CircularProgress";
+import Backdrop from "@mui/material/Backdrop";
 import { useEffect, useState } from "react";
 import { formatName } from "../../helpers";
 import { useImage } from "react-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCss3,
-  faHtml5,
-  faJava,
-  faJs,
-  faPython,
-} from "@fortawesome/free-brands-svg-icons";
-import { Box } from "@mui/system";
-import { FilterAlt } from "@mui/icons-material";
+import { faCss3 } from "@fortawesome/free-brands-svg-icons/faCss3";
+import { faHtml5 } from "@fortawesome/free-brands-svg-icons/faHtml5";
+import { faJava } from "@fortawesome/free-brands-svg-icons/faJava";
+import { faJs } from "@fortawesome/free-brands-svg-icons/faJs";
+import { faPython } from "@fortawesome/free-brands-svg-icons/faPython";
+import Box from "@mui/system/Box";
+import FilterAlt from "@mui/icons-material/FilterAlt";
 
 const Image = ({ project }) => {
   const { src } = useImage({

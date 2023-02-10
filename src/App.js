@@ -4,9 +4,11 @@ import Resume from "./components/Resume";
 import { resumeData } from "./data/resumeData";
 import Contact from "./components/Contact";
 import About from "./components/About";
-import { Button, Menu, MenuItem } from "@mui/material";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import { useState } from "react";
-import { MenuOutlined } from "@mui/icons-material";
+import MenuOutlined from "@mui/icons-material/MenuOutlined";
 
 function App() {
   const [anchorEl, setAnchorEl] = useState(null);
